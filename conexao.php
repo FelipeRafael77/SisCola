@@ -4,25 +4,16 @@ try{
 
     $conexao = new PDO("mysql:host=localhost; ", "root", "");
     $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = "CREATE DATABASE IF NOT EXISTS formulario";
+    $sql = "CREATE DATABASE IF NOT EXISTS siscola";
     $conexao->exec($sql);
 
-    $conexao = new PDO("mysql:host=localhost; dbname=formulario", "root", "");
+    $conexao = new PDO("mysql:host=localhost; dbname=siscola", "root", "");
     $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $sql = "CREATE TABLE IF NOT EXISTS pessoa (
-                idPessoa int(11) AUTO_INCREMENT PRIMARY KEY,
-                nome varchar(50) NOT NULL,
-                idade varchar(2) NOT NULL,
-                estado_civil varchar(20) NOT NULL,
-                data_nascimento date NOT NULL,
-                profissao varchar(50) NOT NULL)";
-    $conexao->exec($sql);
-
-    $sql = "CREATE TABLE IF NOT EXISTS usuario (
+    $sql = "CREATE TABLE IF NOT EXISTS login (
                 id_usuario int(11) AUTO_INCREMENT PRIMARY KEY,
-                login varchar(50) NOT NULL,
-                senha varchar(32) NOT NULL)";            
+                login varchar(100) NOT NULL,
+                senha varchar(50) NOT NULL)";            
     $conexao->exec($sql);
     echo "DB criado com sucesso";
 }

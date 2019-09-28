@@ -4,34 +4,48 @@
 	<meta charset="utf-8">
 	<title>SisCola</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
 </head>
 <body>
 
-	<h1>SisCola - Gerenciamento de Empréstimos</h1>
+<div class="container-fluid">
+    
+<nav class="navbar navbar-expand-sm navbar-light bg-faded">
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-content" aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
 
-<div id="lista1">
-	<h3>Cadastros</h3>
-<ul>
-	<li><a href="">Pessoa</a></li>
-	<li><a href="">Tipo</a></li>
-	<li><a href="">Categoria</a></li>
-	<li><a href="">Utensilios Escolares</a></li>
+<a class="navbar-brand" href="#">SisCola</a>
+
+<div class="collapse navbar-collapse" id="nav-content">   
+<ul class="navbar-nav">
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" id="Preview" href="#" role="button" aria-haspopup="true" aria-expanded="false">Cadastros</a>
+<div class="dropdown-menu" aria-labelledby="Preview">
+<a class="dropdown-item" href="#">Pessoa</a>
+<a class="dropdown-item" href="cadfornecedores.php">Fornecedores</a>
+<a class="dropdown-item" href="#">Categoria</a>
+<a class="dropdown-item" href="#">Tipo</a>
+<a class="dropdown-item" href="#">Utensílios Escolares</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" id="Preview" href="#" role="button" aria-haspopup="true" aria-expanded="false">Movimentações</a>
+<div class="dropdown-menu" aria-labelledby="Preview">
+<a class="dropdown-item" href="#">Empréstimo</a>
+<a class="dropdown-item" href="#">Caixa</a>
+<a class="dropdown-item" href="#">Multa</a>
+<a class="dropdown-item" href="#">Devolução</a>
+<a class="dropdown-item" href="#">Histórico do Caixa</a>
+</div>
+</li>
 </ul>
 </div>
-<div id="lista2">
-	<h3>Movimentações</h3>
-<ul>
-	<li><a href="">Empréstimo</a></li>
-	<li><a href="">Itens Empréstimo</a></li>
-	<li><a href="">Devolução</a></li>
-	<li><a href="">Itens Devolução</a></li>
-	<li><a href="">Fornecedores</a></li>
-	<li><a href="">Caixa</a></li>
-	<li><a href="">Histórico do Caixa</a></li>
-</ul>
+</nav>
+
 </div>
 
-</body>
-
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
 </html>
