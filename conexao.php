@@ -10,8 +10,8 @@ try{
     $conexao = new PDO("mysql:host=localhost; dbname=siscola", "root", "");
     $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $sql = "CREATE TABLE IF NOT EXISTS login (
-                id_usuario int(11) AUTO_INCREMENT PRIMARY KEY,
+    $sql = "CREATE TABLE login (
+                idLogin int PRIMARY KEY,
                 login varchar(100) NOT NULL,
                 senha varchar(50) NOT NULL)";            
     $conexao->exec($sql);
@@ -33,19 +33,19 @@ class Conexao {
     public static function Singleton(){
         if(self::$conexao === null){
             $class = __CLASS__;
-            self::$conexao = new Conexao("root", "", "localhost", "formulario");
+            self::$conexao = new Conexao("root", "", "localhost", "siscola");
         }
 
         return self::$conexao;
     }
 
-    private function __construct($usuario, $senha, $host, $banco){
+    private function __construct($login, $senha, $host, $banco){
 
-        $conexao = new PDO("mysql:host=localhost; dbname=formulario", "root", "");
+        $conexao = new PDO("mysql:host=localhost; dbname=siscola", "root", "");
 
         $dsn = "mysql:dbname=$banco;host=$host";
         try{
-            $this->dbh = new \PDO($dsn,$usuario,$senha);
+            $this->dbh = new \PDO($dsn,$login,$senha);
         }catch(\PDOException $e){
             die($e->getMessage()); 
 

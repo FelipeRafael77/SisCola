@@ -13,9 +13,11 @@ if(!empty($_POST['login'])){
 
 
 
-	$usuario->setLogin($_POST['login']);
-	$usuario->setSenha($_POST['senha']);
-	$usuario->insereUsuario();
+	$fornecedores->setNome($_POST['nome']);
+	$fornecedores->setCnpj($_POST['cnpj']);
+	$fornecedores->setEndereco($_POST['endereco']);
+	$fornecedores->setTelefone($_POST['telefone']);
+	$fornecedores->incluirFornecedor();
 	include 'cadfornecedores.php';
 	
 

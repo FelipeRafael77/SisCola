@@ -22,11 +22,11 @@
 <li class="nav-item dropdown">
 <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="Preview" href="#" role="button" aria-haspopup="true" aria-expanded="false">Cadastros</a>
 <div class="dropdown-menu" aria-labelledby="Preview">
-<a class="dropdown-item" href="#">Pessoa</a>
+<a class="dropdown-item" href="cadpessoa.php">Pessoa</a>
 <a class="dropdown-item" href="cadfornecedores.php">Fornecedores</a>
-<a class="dropdown-item" href="#">Categoria</a>
-<a class="dropdown-item" href="#">Tipo</a>
-<a class="dropdown-item" href="#">Utensílios Escolares</a>
+<a class="dropdown-item" href="cadcategoria.php">Categoria</a>
+<a class="dropdown-item" href="cadtipo.php">Tipo</a>
+<a class="dropdown-item" href="cadutensilio.php">Utensílios Escolares</a>
 </div>
 </li>
 <li class="nav-item dropdown">

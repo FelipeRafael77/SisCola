@@ -9,7 +9,7 @@ $senha = $_POST['senha'];
 $conexao = Conexao::Singleton();
 $stmt = $conexao->getStmt("SELECT * FROM login WHERE login=:login and senha=:senha limit 1");
 $stmt->bindValue(":login", $login);
-$stmt->bindValue(":senha", md5($senha));
+$stmt->bindValue(":senha", $senha);
 
 if($stmt->execute()){
   if($reg=$stmt->fetchObject()){
