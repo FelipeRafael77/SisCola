@@ -1,23 +1,24 @@
 <?php
 
 session_start();
-
 if(!isset($_SESSION['login'])){
 	header('Location: telalogin.php');
 	exit;
 }
 
-include 'login.php';
-$login = new Login();
+include 'utensilios.php';
+$utensilios = new Utensilios();
 
 if(!empty($_POST['login'])){
 
 
 
-	$login->setLogin($_POST['login']);
-	$login->setSenha($_POST['senha']);
-	$login->incluirLogin();
-	include 'cadlogin.php';
+	$utensilios->setNome($_POST['nome']);
+	$utensilios->setCnpj($_POST['cnpj']);
+	$utensilios->setEndereco($_POST['endereco']);
+	$utensilios->setTelefone($_POST['telefone']);
+	$utensilios->incluirUtensilio();
+	include 'cadutensilios.php';
 	
 
 //}else{
@@ -25,14 +26,14 @@ if(!empty($_POST['login'])){
 //		if($usuario->deletaUsuario($_GET['id_usuario'])){
 //			echo "<script>alert('Dado excluído com sucesso!');</script>";
 //			header('Location: controllerfornecedores.php');
-			
+//			
 //		} else {
 //			echo "<script>alert('Erro na exclusão!');</script>";
 //			header('Location: controllerfornecedores.php');
 //		}
          
 
-	//}
+//	}
 }
 
 ?>

@@ -2,7 +2,7 @@
 
 try{
 
-    $conexao = new PDO("mysql:host=localhost; ", "root", "");
+    $conexao = new PDO("mysql:host=localhost; dbname=sisestagio", "root", "");
     $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $sql = "CREATE DATABASE IF NOT EXISTS sisestagio";
     $conexao->exec($sql);
@@ -43,11 +43,10 @@ class Conexao {
     public static $conexao;
     public $dbh;
 
-    
     public static function Singleton(){
         if(self::$conexao === null){
             $class = __CLASS__;
-            self::$conexao = new Conexao("root", "", "localhost", "siscola");
+            self::$conexao = new Conexao("root", "", "localhost", "sisestagio");
         }
 
         return self::$conexao;
@@ -55,7 +54,7 @@ class Conexao {
 
     private function __construct($login, $senha, $host, $banco){
 
-        $conexao = new PDO("mysql:host=localhost; dbname=siscola", "root", "");
+        $conexao = new PDO("mysql:host=localhost; dbname=sisestagio", "root", "");
 
         $dsn = "mysql:dbname=$banco;host=$host";
         try{
@@ -71,9 +70,5 @@ class Conexao {
     }
 
 }
-
-
-
-
 
 ?>
