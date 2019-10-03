@@ -6,19 +6,17 @@ if(!isset($_SESSION['login'])){
 	exit;
 }
 
-include 'fornecedores.php';
-$fornecedores = new Fornecedores();
+include 'login.php';
+$login = new Login();
 
 if(!empty($_POST['login'])){
 
 
 
-	$fornecedores->setNome($_POST['nome']);
-	$fornecedores->setCnpj($_POST['cnpj']);
-	$fornecedores->setEndereco($_POST['endereco']);
-	$fornecedores->setTelefone($_POST['telefone']);
-	$fornecedores->incluirFornecedor();
-	include 'cadfornecedores.php';
+	$fornecedores->setLogin($_POST['login']);
+	$fornecedores->setSenha($_POST['senha']);
+	$fornecedores->incluirLogin();
+	include 'cadlogin.php';
 	
 
 //}else{
@@ -26,14 +24,14 @@ if(!empty($_POST['login'])){
 //		if($usuario->deletaUsuario($_GET['id_usuario'])){
 //			echo "<script>alert('Dado excluído com sucesso!');</script>";
 //			header('Location: controllerfornecedores.php');
-//			
+			
 //		} else {
 //			echo "<script>alert('Erro na exclusão!');</script>";
 //			header('Location: controllerfornecedores.php');
 //		}
          
 
-//	}
+	//}
 }
 
 ?>

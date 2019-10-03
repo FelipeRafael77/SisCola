@@ -1,34 +1,64 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
+<?php
 
-    <title>SisCola - Gerenciamento de Empréstimos</title>
+include_once 'conexao.php';
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+class Login{
+    
+    private $id;
+    private $login;
+    private $senha;
+    private $conexao;
 
-    <link href="css/style.css" rel="stylesheet">
+    public function __construct(){
+        $this->conexao = Conexao::Singleton();
+    }
 
-<form method="POST" action="autenticalogin.php">
-  <body class="text-center">
-    <div class="container login-container">
-            <div class="row">
-                <div class="col-md-6 login-form-1">
-                    <h3>SisCola</h3>
-                    
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Login" value="" />
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control" placeholder="Senha" value="" />
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" class="btnSubmit" value="Entrar" />
-                        </div>
-                        <a href="cadlogin.php">Não possui cadastro? Inscreva-se aqui!</a>
-                    </div>
-            </div>
-        </div>
-        </form>
-  </body>
-</html>
+    public function setId($id){
+        $this->id = $id;
+    }
+
+    public function getId(){
+        return $this->id;
+    }
+
+    public function setLogin($login){
+        $this->login = $login;
+    }
+
+    public function getLogin(){
+        return $this->login;
+    }
+
+    public function setSenha($senha){
+        $this->senha = $senha;
+    }
+
+    public function getSenha(){
+        return $this->senha;
+    }
+
+    public function incluirLogin(){
+        
+        try {
+            
+            $stmt = $this->conexao->getStmt("INSERT INTO login (login, senha) VALUES (:login,:senha)");
+            $stmt->bindValue(":login", $this->login, PDO::PARAM_STR);
+            $stmt->bindValue(":senha", $this->senha, PDO::PARAM_STR);
+            if ($stmt->execute()) {
+                if ($stmt->rowCount() > 0) {
+                    echo "<script>alert('Dados inseridos com sucesso!');</script>";
+                    header('Location: controllerlogin.php');
+                    $login = null;
+                    $senha = null;
+                } else {
+                    echo "<script>alert('Erro no cadastro!');</script>";
+                    header('Location: controllerlogin.php');
+                }
+            } else {
+                throw new PDOException("Erro: Não foi possível executar o sql");
+            }
+        } catch (PDOException $erro) {
+            echo "Erro: " . $erro->getMessage();
+        }
+    }
+}

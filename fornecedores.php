@@ -9,6 +9,7 @@ class Fornecedores{
 	private $cnpj;
 	private $endereco;
 	private $telefone;
+	private $conexao;
 
 	public function __construct(){
 		$this->conexao = Conexao::Singleton();

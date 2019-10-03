@@ -17,7 +17,7 @@ if($stmt->execute()){
   	header("Location: index.php");
   	exit;
   }else{
-  	header("Location: login.php");	
+  	header("Location: telalogin.php");	
 	exit;
   	}
 }else{
