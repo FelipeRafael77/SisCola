@@ -1,8 +1,8 @@
 <?php
 
-try{
+/*try{
 
-    $conexao = new PDO("mysql:host=localhost; dbname=sisestagio", "root", "");
+    $conexao = new PDO("mysql:host=localhost; ", "root", "");
     $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $sql = "CREATE DATABASE IF NOT EXISTS sisestagio";
     $conexao->exec($sql);
@@ -24,7 +24,7 @@ try{
                 idTipo int NOT NULL)";
     $conexao->exec($sql);
 
-    $sql = "CREATE TABLE login (
+    $sql = "CREATE TABLE IF NOT EXISTS login (
                 idLogin int PRIMARY KEY,
                 login varchar(100) NOT NULL,
                 senha varchar(50) NOT NULL)";            
@@ -35,7 +35,7 @@ try{
 catch(PDOException $e)
 {
     echo $sql . "<br>" . $e->getMessage();
-}
+}*/
 
 
 class Conexao {

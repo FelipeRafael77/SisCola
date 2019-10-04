@@ -38,7 +38,6 @@ class Login{
     }
 
     public function incluirLogin(){
-        
         try {
             
             $stmt = $this->conexao->getStmt("INSERT INTO login (login, senha) VALUES (:login,:senha)");
@@ -47,7 +46,7 @@ class Login{
             if ($stmt->execute()) {
                 if ($stmt->rowCount() > 0) {
                     echo "<script>alert('Dados inseridos com sucesso!');</script>";
-                    header('Location: controllerlogin.php');
+                    //header('Location: controllerlogin.php');
                     $login = null;
                     $senha = null;
                 } else {

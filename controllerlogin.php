@@ -12,9 +12,7 @@ $login = new Login();
 
 if(!empty($_POST['login'])){
 
-
-
-	$login->setLogin($_POST['login']);
+  $login->setLogin($_POST['login']);
 	$login->setSenha($_POST['senha']);
 	$login->incluirLogin();
 	include 'cadlogin.php';
