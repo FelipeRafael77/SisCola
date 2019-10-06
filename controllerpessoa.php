@@ -10,7 +10,8 @@ if(!isset($_SESSION['login'])){
 include 'pessoa.php';
 $pessoa = new Pessoa();
 
-if(!empty($_POST['login'])){
+
+if(!empty($_POST['nome'])){
 
     $pessoa->setNome($_POST['nome']);
 	$pessoa->setRg($_POST['rg']);

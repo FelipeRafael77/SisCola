@@ -5,10 +5,10 @@ include_once 'conexao.php';
 class Fornecedores{
 	
 	private $id;
-	private $nome;
-	private $cnpj;
-	private $endereco;
-	private $telefone;
+	private $nomeFornecedor;
+	private $cnpjFornecedor;
+	private $enderecoFornecedor;
+	private $telefoneFornecedor;
 	private $conexao;
 
 	public function __construct(){
@@ -23,53 +23,55 @@ class Fornecedores{
 		return $this->id;
 	}
 
-	public function setNome($nome){
-		$this->nome = $nome;
+	public function setNomeFornecedor($nomeFornecedor){
+		$this->nomeFornecedor = $nomeFornecedor;
 	}
 
-	public function getNome(){
-		return $this->nome;
+	public function getNomeFornecedor(){
+		return $this->nomeFornecedor;
 	}
 
-	public function setCnpj($cnpj){
-		$this->cnpj = $cnpj;
+	public function setCnpjFornecedor($cnpjFornecedor){
+		$this->cnpjFornecedor = $cnpjFornecedor;
 	}
 
-	public function getCnpj(){
-		return $this->cnpj;
+	public function getCnpjFornecedor(){
+		return $this->cnpjFornecedor;
 	}
 
-	public function setEndereco($endereco){
-		$this->endereco = $endereco;
+	public function setEnderecoFornecedor($enderecoFornecedor){
+		$this->enderecoFornecedor = $enderecoFornecedor;
 	}
 
-	public function getEndereco(){
-		return $this->endereco;
+	public function getEnderecoFornecedor(){
+		return $this->enderecoFornecedor;
 	}
 
-	public function setTelefone($telefone){
-		$this->telefone = $telefone;
+	public function setTelefoneFornecedor($telefoneFornecedor){
+		$this->telefoneFornecedor = $telefoneFornecedor;
 	}
 
-	public function getTelefone(){
-		return $this->telefone;
+	public function getTelefoneFornecedor(){
+		return $this->telefoneFornecedor;
 	}
 
 	public function incluirFornecedor(){
 		
 		try {
 			
-			$stmt = $this->conexao->getStmt("INSERT INTO fornecedores (nome, cnpj, endereco, telefone) VALUES (:nome,:cnpj,:endereco,:telefone)");
-			$stmt->bindValue(":nome", $this->nome, PDO::PARAM_STR);
-			$stmt->bindValue(":cnpj", $this->cnpj, PDO::PARAM_STR);
-			$stmt->bindValue(":endereco", $this->endereco, PDO::PARAM_STR);
-			$stmt->bindValue(":telefone", $this->telefone, PDO::PARAM_STR);
+			$stmt = $this->conexao->getStmt("INSERT INTO fornecedores (nomeFornecedor, cnpjFornecedor, enderecoFornecedor, telefoneFornecedor) VALUES (:nomeFornecedor,:cnpjFornecedor,:enderecoFornecedor,:telefoneFornecedor)");
+			$stmt->bindValue(":nomeFornecedor", $this->nomeFornecedor, PDO::PARAM_STR);
+			$stmt->bindValue(":cnpjFornecedor", $this->cnpjFornecedor, PDO::PARAM_STR);
+			$stmt->bindValue(":enderecoFornecedor", $this->enderecoFornecedor, PDO::PARAM_STR);
+			$stmt->bindValue(":telefoneFornecedor", $this->telefoneFornecedor, PDO::PARAM_STR);
 			if ($stmt->execute()) {
 				if ($stmt->rowCount() > 0) {
 					echo "<script>alert('Dados inseridos com sucesso!');</script>";
-					header('Location: controllerfornecedores.php');
-					$login = null;
-					$senha = null;
+					//header('Location: controllerfornecedores.php');
+					$nomeFornecedor = null;
+					$cnpjFornecedor = null;
+					$enderecoFornecedor = null;
+					$telefoneFornecedor = null;
 				} else {
 					echo "<script>alert('Erro no cadastro!');</script>";
 					header('Location: controllerfornecedores.php');

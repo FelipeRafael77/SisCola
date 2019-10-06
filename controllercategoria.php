@@ -7,25 +7,25 @@ if(!isset($_SESSION['login'])){
 	exit;
 }
 
-include 'tipo.php';
-$tipo = new Tipo();
+include 'categoria.php';
+$categoria = new Categoria();
 
-if(!empty($_POST['descricao'])){
+if(!empty($_POST['nomeCategoria'])){
 
-    $tipo->setDescricao($_POST['descricao']);
-    $tipo->incluirTipo();
-	include 'cadtipo.php';
+    $categoria->setNomeCategoria($_POST['nomeCategoria']);
+    $categoria->incluirCategoria();
+	include 'cadcategoria.php';
 	
 
 //}else{
 //	if(@$_GET['acao'] == 'excluir'){
 //		if($usuario->deletaUsuario($_GET['id_usuario'])){
 //			echo "<script>alert('Dado excluído com sucesso!');</script>";
-//			header('Location: controllertipo.php');
+//			header('Location: controllercategoria.php');
 			
 //		} else {
 //			echo "<script>alert('Erro na exclusão!');</script>";
-//			header('Location: controllertipo.php');
+//			header('Location: controllercategoria.php');
 //		}
          
 

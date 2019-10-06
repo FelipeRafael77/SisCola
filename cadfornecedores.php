@@ -12,10 +12,10 @@
         
         <br><h1>Cadastro de Fornecedores</h1><br>
 
-		Nome: <input class="form-control mr-sm-2" type="text" name="nome">
-		CNPJ: <input class="form-control mr-sm-2" type="text" name="cnpj">
-		Endereço: <input class="form-control mr-sm-2" type="text" name="endereco">
-		Telefone: <input class="form-control mr-sm-2" type="text" name="telefone">
+		Nome: <input class="form-control mr-sm-2" type="text" name="nomeFornecedor">
+		CNPJ: <input class="form-control mr-sm-2" type="text" name="cnpjFornecedor">
+		Endereço: <input class="form-control mr-sm-2" type="text" name="enderecoFornecedor">
+		Telefone: <input class="form-control mr-sm-2" type="text" name="telefoneFornecedor">
 
 		<br><input class="btn btn-dark" type="submit" name="enviar" value="Enviar"></td><td>&nbsp;<a class="btn btn-outline-dark" onClick="window.history.back();">Cancelar</a>
 	

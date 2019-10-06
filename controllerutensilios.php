@@ -9,13 +9,13 @@ if(!isset($_SESSION['login'])){
 include 'utensilios.php';
 $utensilios = new Utensilios();
 
-if(!empty($_POST['login'])){
+if(!empty($_POST['nomeUtensilio'])){
 
 
 
-	$utensilios->setNome($_POST['nome']);
-	$utensilios->setCnpj($_POST['cnpj']);
-	$utensilios->setEndereco($_POST['endereco']);
+	$utensilios->setNomeUtensilio($_POST['nomeUtensilio']);
+	$utensilios->setEspecificacao($_POST['especificacao']);
+	$utensilios->setQuantidade($_POST['quantidade']);
 	$utensilios->setTelefone($_POST['telefone']);
 	$utensilios->incluirUtensilio();
 	include 'cadutensilios.php';
@@ -25,11 +25,11 @@ if(!empty($_POST['login'])){
 //	if(@$_GET['acao'] == 'excluir'){
 //		if($usuario->deletaUsuario($_GET['id_usuario'])){
 //			echo "<script>alert('Dado excluído com sucesso!');</script>";
-//			header('Location: controllerfornecedores.php');
+//			header('Location: controllerutensilios.php');
 //			
 //		} else {
 //			echo "<script>alert('Erro na exclusão!');</script>";
-//			header('Location: controllerfornecedores.php');
+//			header('Location: controllerutensilios.php');
 //		}
          
 

@@ -15,9 +15,9 @@ class Pessoa{
     private $regprof;
     private $mataluno;
     private $ativo;
+    private $login;
+    private $tipo;
     private $conexao;
-    $login = new Login();
-    $tipo = new Tipo();
 
     public function __construct(){
         $this->conexao = Conexao::Singleton();
@@ -114,7 +114,7 @@ class Pessoa{
     public function incluirPessoa(){
         try {
             
-            $stmt = $this->conexao->getStmt("INSERT INTO pessoa (nome, rg, cpf, endereco, telefone, regprof, mataluno, ativo, idLogin, idTipo) VALUES (:nome,:rg,:cpf,:endereco,:telefone,:regprof,:mataluno,:ativo,:idLogin,:idTipo)");
+            $stmt = $this->conexao->getStmt("INSERT INTO pessoa (nome, rg, cpf, endereco, telefone, regprof, mataluno, ativo, login, tipo) VALUES (:nome,:rg,:cpf,:endereco,:telefone,:regprof,:mataluno,:ativo,:idLogin,:idTipo)");
             $stmt->bindValue(":nome", $this->nome, PDO::PARAM_STR);
             $stmt->bindValue(":rg", $this->rg, PDO::PARAM_STR);
             $stmt->bindValue(":cpf", $this->cpf, PDO::PARAM_STR);
@@ -123,8 +123,8 @@ class Pessoa{
             $stmt->bindValue(":regprof", $this->regprof, PDO::PARAM_STR);
             $stmt->bindValue(":mataluno", $this->mataluno, PDO::PARAM_STR);
             $stmt->bindValue(":ativo", $this->ativo, PDO::PARAM_STR);
-            $stmt->bindValue(":idLogin", $this->login->getId(), PDO::PARAM_STR);
-            $stmt->bindValue(":idTipo", $this->tipo->getId(), PDO::PARAM_STR);
+            $stmt->bindValue(":login", $this->login->getLogin(), PDO::PARAM_STR);
+            $stmt->bindValue(":tipo", $this->tipo->getTipo(), PDO::PARAM_STR);
             if ($stmt->execute()) {
                 if ($stmt->rowCount() > 0) {
                     echo "<script>alert('Dados inseridos com sucesso!');</script>";

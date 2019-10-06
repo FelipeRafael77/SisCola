@@ -7,7 +7,7 @@ include 'fornecedores.php';
 class Utensilios_Escolares{
 	
 	private $id;
-	private $nome;
+	private $nomeUtensilio;
 	private $especificacao;
 	private $quantidade;
 	private $conexao;
@@ -27,12 +27,12 @@ class Utensilios_Escolares{
 		return $this->id;
 	}
 
-	public function setNome($nome){
-		$this->nome = $nome;
+	public function setNomeUtensilio($nomeUtensilio){
+		$this->nomeUtensilio = $nome;
 	}
 
-	public function getNome(){
-		return $this->nome;
+	public function getNomeUtensilio(){
+		return $this->nomeUtensilio;
 	}
 
 	public function setEspecificacao($especificacao){
@@ -55,8 +55,8 @@ class Utensilios_Escolares{
 		
 		try {
 			
-			$stmt = $this->conexao->getStmt("INSERT INTO utensilios_escolares (nome, especificacao, quantidade, idCategoria, idFornecedores) VALUES (:nome,:especificacao,:quantidade,:idCategoria,:idFornecedores)");
-			$stmt->bindValue(":nome", $this->nome, PDO::PARAM_STR);
+			$stmt = $this->conexao->getStmt("INSERT INTO utensilios_escolares (nomeUtensilio, especificacao, quantidade, idCategoria, idFornecedores) VALUES (:nomeUtensilio,:especificacao,:quantidade,:idCategoria,:idFornecedores)");
+			$stmt->bindValue(":nomeUtensilio", $this->nomeUtensilio, PDO::PARAM_STR);
 			$stmt->bindValue(":especificacao", $this->cnpj, PDO::PARAM_STR);
 			$stmt->bindValue(":quantidade", $this->endereco, PDO::PARAM_STR);
 			$stmt->bindValue(":idCategoria", $this->telefone, PDO::PARAM_STR);
@@ -64,9 +64,10 @@ class Utensilios_Escolares{
 			if ($stmt->execute()) {
 				if ($stmt->rowCount() > 0) {
 					echo "<script>alert('Dados inseridos com sucesso!');</script>";
-					header('Location: controllerutensilios.php');
-					$login = null;
-					$senha = null;
+					//header('Location: controllerutensilios.php');
+					$nomeUtensilio = null;
+					$especificacao = null;
+					$quantidade = null;
 				} else {
 					echo "<script>alert('Erro no cadastro!');</script>";
 					header('Location: controllerutensilios.php');

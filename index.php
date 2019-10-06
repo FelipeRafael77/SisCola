@@ -32,12 +32,15 @@
 <li class="nav-item dropdown">
 <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="Preview" href="#" role="button" aria-haspopup="true" aria-expanded="false">Movimentações</a>
 <div class="dropdown-menu" aria-labelledby="Preview">
-<a class="dropdown-item" href="#">Empréstimo</a>
+<a class="dropdown-item" href="cademprestimo.php">Empréstimo</a>
 <a class="dropdown-item" href="#">Caixa</a>
 <a class="dropdown-item" href="#">Multa</a>
 <a class="dropdown-item" href="#">Devolução</a>
 <a class="dropdown-item" href="#">Histórico do Caixa</a>
 </div>
+</li>
+<li class="nav-item active">
+	<a class="nav-link" href="logout.php">Sair<span class="sr-only">(current)</span></a>
 </li>
 </ul>
 </div>

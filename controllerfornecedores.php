@@ -10,14 +10,14 @@ if(!isset($_SESSION['login'])){
 include 'fornecedores.php';
 $fornecedores = new Fornecedores();
 
-if(!empty($_POST['login'])){
+if(!empty($_POST['nomeFornecedor'])){
 
 
 
-	$fornecedores->setNome($_POST['nome']);
-	$fornecedores->setCnpj($_POST['cnpj']);
-	$fornecedores->setEndereco($_POST['endereco']);
-	$fornecedores->setTelefone($_POST['telefone']);
+	$fornecedores->setNomeFornecedor($_POST['nomeFornecedor']);
+	$fornecedores->setCnpjFornecedor($_POST['cnpjFornecedor']);
+	$fornecedores->setEnderecoFornecedor($_POST['enderecoFornecedor']);
+	$fornecedores->setTelefoneFornecedor($_POST['telefoneFornecedor']);
 	$fornecedores->incluirFornecedor();
 	include 'cadfornecedores.php';
 	
