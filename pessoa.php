@@ -21,6 +21,8 @@ class Pessoa{
 
     public function __construct(){
         $this->conexao = Conexao::Singleton();
+        $this->login = new Login();
+        $this->tipo = new Tipo();
     }
 
     public function setId($id){
@@ -114,7 +116,7 @@ class Pessoa{
     public function incluirPessoa(){
         try {
             
-            $stmt = $this->conexao->getStmt("INSERT INTO pessoa (nome, rg, cpf, endereco, telefone, regprof, mataluno, ativo, login, tipo) VALUES (:nome,:rg,:cpf,:endereco,:telefone,:regprof,:mataluno,:ativo,:idLogin,:idTipo)");
+            $stmt = $this->conexao->getStmt("INSERT INTO pessoa (nome, rg, cpf, endereco, telefone, regprof, mataluno, ativo, idLogin, idTipo) VALUES (:nome,:rg,:cpf,:endereco,:telefone,:regprof,:mataluno,:ativo,:idLogin,:idTipo)");
             $stmt->bindValue(":nome", $this->nome, PDO::PARAM_STR);
             $stmt->bindValue(":rg", $this->rg, PDO::PARAM_STR);
             $stmt->bindValue(":cpf", $this->cpf, PDO::PARAM_STR);
@@ -123,8 +125,8 @@ class Pessoa{
             $stmt->bindValue(":regprof", $this->regprof, PDO::PARAM_STR);
             $stmt->bindValue(":mataluno", $this->mataluno, PDO::PARAM_STR);
             $stmt->bindValue(":ativo", $this->ativo, PDO::PARAM_STR);
-            $stmt->bindValue(":login", $this->login->getLogin(), PDO::PARAM_STR);
-            $stmt->bindValue(":tipo", $this->tipo->getTipo(), PDO::PARAM_STR);
+            $stmt->bindValue(":idLogin", $this->login->getLogin()->getId(), PDO::PARAM_INT);
+            $stmt->bindValue(":idTipo", $this->tipo->getTipo()->getId(), PDO::PARAM_INT);
             if ($stmt->execute()) {
                 if ($stmt->rowCount() > 0) {
                     echo "<script>alert('Dados inseridos com sucesso!');</script>";
@@ -137,8 +139,8 @@ class Pessoa{
                     $regprof = null;
                     $mataluno = null;
                     $ativo = null;
-                    $login = null;
-                    $tipo = null;
+                    $idLogin = null;
+                    $idTipo = null;
                 } else {
                     echo "<script>alert('Erro no cadastro!');</script>";
                     header('Location: controllerpessoa.php');

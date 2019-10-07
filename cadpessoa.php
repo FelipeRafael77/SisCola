@@ -20,8 +20,8 @@
 		Registro de Professor: <input class="form-control mr-sm-2" type="number" name="regprof">
 		Matrícula do Aluno: <input class="form-control mr-sm-2" type="number" name="mataluno">
 		Ativo: <input class="form-control mr-sm-2" type="text" name="ativo">
-		Login: <input class="form-control mr-sm-2" type="text" name="login">
-		Tipo: <input class="form-control mr-sm-2" type="text" name="tipo">
+		Login: <input class="form-control mr-sm-2" type="text" name="idLogin">
+		Tipo: <input class="form-control mr-sm-2" type="text" name="idTipo">
 		<br><input class="btn btn-dark" type="submit" name="enviar" value="Enviar"></td><td>&nbsp;<a class="btn btn-outline-dark" onClick="window.history.back();">Cancelar</a>
 	
 	</form>

@@ -3,16 +3,18 @@
 include_once 'conexao.php';
 include 'pessoa.php';
 
-class Emprestimo extends Pessoa{
+class Emprestimo{
 	
 	private $id;
 	private $tipoEmprestimo;
 	private $dataEmprestimo;
 	private $prazo;
 	private $conexao;
+	private $pessoa;
 
 	public function __construct(){
 		$this->conexao = Conexao::Singleton();
+		$this->pessoa = new Pessoa();
 	}
 
 	public function setId($id){
@@ -48,12 +50,11 @@ class Emprestimo extends Pessoa{
 
 
 	public function setPessoa($pessoa){
-		$this->pessoa = $prazo;
+		$this->pessoa = $pessoa;
 	}
 
 	public function getPessoa(){
 		return $this->pessoa;
-	}
 
 	public function incluirEmprestimo(){
 		
@@ -62,11 +63,11 @@ class Emprestimo extends Pessoa{
 			$date = strtotime($dataEmprestimo);
 			$data_formatada = date('Y/m/d', $date);
 			
-			$stmt = $this->conexao->getStmt("INSERT INTO emprestimo (tipoEmprestimo, dataEmprestimo, prazo, pessoa) VALUES (:tipoEmprestimo,:dataEmprestimo,:prazo,:pessoa)");
+			$stmt = $this->conexao->getStmt("INSERT INTO emprestimo (tipoEmprestimo, dataEmprestimo, prazo, idPessoa) VALUES (:tipoEmprestimo,:dataEmprestimo,:prazo,:idPessoa)");
 			$stmt->bindValue(":tipoEmprestimo", $this->tipoEmprestimo, PDO::PARAM_STR);
 			$stmt->bindValue(":dataEmprestimo", $this->data_formatada);
 			$stmt->bindValue(":prazo", $this->prazo, PDO::PARAM_STR);
-			$stmt->bindValue(":pessoa", $this->pessoa->getPessoa(), PDO::PARAM_STR);
+			$stmt->bindValue(":idPessoa", $this->pessoa->getPessoa()->getId(), PDO::PARAM_INT);
 			if ($stmt->execute()) {
 				if ($stmt->rowCount() > 0) {
 					echo "<script>alert('Dados inseridos com sucesso!');</script>";
