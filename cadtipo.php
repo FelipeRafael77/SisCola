@@ -9,13 +9,19 @@
 <body>
 
 	<form action="controllertipo.php" method="post">
-        
+
+    	<div class="text-center"> 
         <br><h1>Cadastro de Tipo</h1><br>
-
-		Descrição: <input class="form-control mr-sm-2" type="text" name="descricao">
-
-		<br><input class="btn btn-dark" type="submit" name="enviar" value="Enviar"></td><td>&nbsp;<a class="btn btn-outline-dark" onClick="window.history.back();">Cancelar</a>
-	
+       </div>
+        
+        <div class="form-row">
+        	<div class="form-group col-md-4">
+        		Descrição: <input class="form-control mr-sm-2" type="text" name="descricao">
+        	</div>
+        </div>
+		<div class="text-center">
+        	<br><input class="btn btn-dark" type="submit" name="enviar" value="Enviar"></td><td>&nbsp;<a class="btn btn-outline-dark" onClick="window.history.back();">Cancelar</a>
+        	</div>
 	</form>
 	
 </body>

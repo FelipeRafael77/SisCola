@@ -21,11 +21,12 @@ if(!empty($_POST['nome'])){
 	$pessoa->setRegProf($_POST['regprof']);
 	$pessoa->setMatAluno($_POST['mataluno']);
 	$pessoa->setAtivo($_POST['ativo']);
-	$pessoa->setLogin($_POST['login']);
-	$pessoa->setTipo($_POST['tipo']);
+	$pessoa->setLogin($_POST['idLogin']);
+	$pessoa->setTipo($_POST['idTipo']);
     $pessoa->incluirPessoa();
 	include 'cadpessoa.php';
 	
+	print_r($_POST);
 
 //}else{
 //	if(@$_GET['acao'] == 'excluir'){

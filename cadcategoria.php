@@ -9,13 +9,19 @@
 <body>
 
     <form action="controllercategoria.php" method="post">
-        
+
+    	<div class="text-center"> 
         <br><h1>Cadastro de Categoria</h1><br>
-
-        Categoria: <input class="form-control mr-sm-2" type="text" name="nomeCategoria">
-
-        <br><input class="btn btn-dark" type="submit" name="enviar" value="Enviar"></td><td>&nbsp;<a class="btn btn-outline-dark" onClick="window.history.back();">Cancelar</a>
-    
+       </div>
+        
+        <div class="form-row">
+        	<div class="form-group col-md-4">
+        		Categoria: <input class="form-control mr-sm-2" type="text" name="nomeCategoria">
+        	</div>
+        </div>
+		<div class="text-center">
+        	<br><input class="btn btn-dark" type="submit" name="enviar" value="Enviar"></td><td>&nbsp;<a class="btn btn-outline-dark" onClick="window.history.back();">Cancelar</a>
+        	</div>
     </form>
     
 </body>

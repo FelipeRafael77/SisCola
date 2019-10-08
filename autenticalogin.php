@@ -24,7 +24,4 @@ if($stmt->execute()){
   	throw new \Exception("Erro na validação de autenticação de usuário!");
 }
 
-
-
-
 ?>
