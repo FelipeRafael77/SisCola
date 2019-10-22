@@ -35,7 +35,7 @@
 <a class="dropdown-item" href="cademprestimo.php">Empréstimo</a>
 <a class="dropdown-item" href="#">Caixa</a>
 <a class="dropdown-item" href="#">Multa</a>
-<a class="dropdown-item" href="#">Devolução</a>
+<a class="dropdown-item" href="caddevolucao.php">Devolução</a>
 <a class="dropdown-item" href="#">Histórico do Caixa</a>
 </div>
 </li>

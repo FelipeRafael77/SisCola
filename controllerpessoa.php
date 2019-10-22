@@ -25,8 +25,6 @@ if(!empty($_POST['nome'])){
 	$pessoa->setTipo($_POST['idTipo']);
     $pessoa->incluirPessoa();
 	include 'cadpessoa.php';
-	
-	print_r($_POST);
 
 //}else{
 //	if(@$_GET['acao'] == 'excluir'){

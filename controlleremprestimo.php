@@ -16,7 +16,7 @@ if(!empty($_POST['tipoEmprestimo'])){
     $emprestimo->setTipoEmprestimo($_POST['tipoEmprestimo']);
 	$emprestimo->setDataEmprestimo($_POST['dataEmprestimo']);
 	$emprestimo->setPrazo($_POST['prazo']);
-	$emprestimo->setPessoa($_POST['pessoa']);
+	$emprestimo->setPessoa($_POST['idPessoa']);
     $emprestimo->incluirEmprestimo();
 	include 'cademprestimo.php';
 	

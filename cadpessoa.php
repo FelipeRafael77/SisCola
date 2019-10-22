@@ -39,25 +39,21 @@
         		Matrícula do Aluno: <input class="form-control mr-sm-2" type="number" name="mataluno">
         	</div>
         	<div class="form-check">
-        		<br><input class="form-check-input" type="checkbox" name="ativo">Ativo</input></br>
+        		<br><input class="form-check-input" type="checkbox" name="ativo" value="ativo">Ativo?</input></br>
         	</div>
         </div>
         <div class="form-row">
         	<div class="form-group col-md-3">
-        		Login: <select class="custom-select">
+        		
+                Login: <select class="custom-select" name="idLogin">
         			<option selected>Selecione um login...</option>
-        			<option value="1">One</option>
+        			<option value="1">On</option>
         			<option value="2">Two</option>
         			<option value="3">Three</option>
         		</select>
         	</div>
         	<div class="form-group col-md-3">
-        		Tipo: <select class="custom-select">
-        			<option selected>Selecione um tipo...</option>
-        			<option value="1">One</option>
-        			<option value="2">Two</option>
-        			<option value="3">Three</option>
-        		</select>
+        		
         	</div>
         </div>
 		

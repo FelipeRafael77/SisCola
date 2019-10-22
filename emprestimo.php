@@ -9,8 +9,8 @@ class Emprestimo{
 	private $tipoEmprestimo;
 	private $dataEmprestimo;
 	private $prazo;
-	private $conexao;
 	private $pessoa;
+	private $conexao;
 
 	public function __construct(){
 		$this->conexao = Conexao::Singleton();
@@ -75,7 +75,7 @@ class Emprestimo{
 					$tipoEmprestimo = null;
 					$dataEmprestimo = null;
 					$prazo = null;
-					$pessoa = null;
+					$idPessoa = null;
 				} else {
 					echo "<script>alert('Erro no cadastro!');</script>";
 					header('Location: controlleremprestimo.php');
