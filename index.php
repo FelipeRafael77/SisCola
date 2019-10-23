@@ -36,7 +36,7 @@
 <a class="dropdown-item" href="#">Caixa</a>
 <a class="dropdown-item" href="#">Multa</a>
 <a class="dropdown-item" href="caddevolucao.php">Devolução</a>
-<a class="dropdown-item" href="#">Histórico do Caixa</a>
+<a class="dropdown-item" href="cadhistoricocaixa.php">Histórico do Caixa</a>
 </div>
 </li>
 <li class="nav-item active">

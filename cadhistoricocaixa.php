@@ -8,17 +8,17 @@
 
 <body>
 
-	<form action="controllerdevolucao.php" method="post">
+	<form action="controllerhistoricocaixa.php" method="post">
         
         <div class="text-center"> 
-        <br><h1>Cadastro de Devolução</h1><br>
+        <br><h1>Histórico de Caixa</h1><br>
        </div>
 
        <div class="form-row">
         	<div class="form-group col-md-4">
-        		Data de Devolução: <input class="form-control mr-sm-2" type="text" name="dataDevolucao">
+        		Descrição: <input class="form-control mr-sm-2" type="text" name="descricao">
         	</div>
-        </div>
+        	</div>
 
 		<div class="text-center">
         	<br><input class="btn btn-dark" type="submit" name="enviar" value="Enviar"></td><td>&nbsp;<a class="btn btn-outline-dark" onClick="window.history.back();">Cancelar</a>

@@ -29,13 +29,14 @@ class Devolucao{
 
 
     public function incluirDevolucao(){
+    	
     	try {
 
     		$date = strtotime($dataDevolucao);
 			$data_formatada = date('Y/m/d', $date);
             
             $stmt = $this->conexao->getStmt("INSERT INTO devolucao (dataDevolucao) VALUES (:dataDevolucao)");
-            $stmt->bindValue(":dataDevolucao", $this->data_formatada);
+            $stmt->bindValue(":dataDevolucao", $data_formatada);
             if ($stmt->execute()) {
                 if ($stmt->rowCount() > 0) {
                     echo "<script>alert('Dados inseridos com sucesso!');</script>";

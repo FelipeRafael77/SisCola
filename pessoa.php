@@ -14,7 +14,7 @@ class Pessoa{
     private $telefone;
     private $regprof;
     private $mataluno;
-    private $ativo;
+    private $status;
     private $login;
     private $tipo;
     private $conexao;
@@ -89,12 +89,12 @@ class Pessoa{
         return $this->mataluno;
     }
 
-    public function setAtivo($ativo){
-        $this->ativo = $ativo;
+    public function setStatus($status){
+        $this->status = $status;
     }
 
-    public function getAtivo(){
-        return $this->ativo;
+    public function getStatus(){
+        return $this->status;
     }
 
     public function setLogin($login){
@@ -116,7 +116,7 @@ class Pessoa{
     public function incluirPessoa(){
         try {
             
-            $stmt = $this->conexao->getStmt("INSERT INTO pessoa (nome, rg, cpf, endereco, telefone, regprof, mataluno, ativo, idLogin, idTipo) VALUES (:nome,:rg,:cpf,:endereco,:telefone,:regprof,:mataluno,:ativo,:idLogin,:idTipo)");
+            $stmt = $this->conexao->getStmt("INSERT INTO pessoa (nome, rg, cpf, endereco, telefone, regprof, mataluno, status, idLogin, idTipo) VALUES (:nome,:rg,:cpf,:endereco,:telefone,:regprof,:mataluno,:status,:idLogin,:idTipo)");
             $stmt->bindValue(":nome", $this->nome, PDO::PARAM_STR);
             $stmt->bindValue(":rg", $this->rg, PDO::PARAM_STR);
             $stmt->bindValue(":cpf", $this->cpf, PDO::PARAM_STR);
@@ -124,10 +124,13 @@ class Pessoa{
             $stmt->bindValue(":telefone", $this->telefone, PDO::PARAM_STR);
             $stmt->bindValue(":regprof", $this->regprof, PDO::PARAM_STR);
             $stmt->bindValue(":mataluno", $this->mataluno, PDO::PARAM_STR);
-            $stmt->bindValue(":ativo", $this->ativo, PDO::PARAM_STR);
-            $stmt->bindValue(":idLogin", $this->login->getLogin()->getId(), PDO::PARAM_INT);
-            $stmt->bindValue(":idTipo", $this->tipo->getTipo()->getId(), PDO::PARAM_INT);
+            $stmt->bindValue(":status", $this->status, PDO::PARAM_STR);
+            $stmt->bindValue(":idLogin", 1, PDO::PARAM_INT);
+            $stmt->bindValue(":idTipo", 1, PDO::PARAM_INT);
+            echo "0";
+            //var_dump($stmt);
             if ($stmt->execute()) {
+                echo "1";
                 if ($stmt->rowCount() > 0) {
                     echo "<script>alert('Dados inseridos com sucesso!');</script>";
                     //header('Location: controllerpessoa.php');
@@ -138,18 +141,21 @@ class Pessoa{
                     $telefone = null;
                     $regprof = null;
                     $mataluno = null;
-                    $ativo = null;
+                    $status = null;
                     $idLogin = null;
                     $idTipo = null;
                 } else {
+                    echo "2";
                     echo "<script>alert('Erro no cadastro!');</script>";
                     header('Location: controllerpessoa.php');
                 }
             } else {
                 throw new PDOException("Erro: Não foi possível executar o sql");
+                echo "3";
             }
         } catch (PDOException $erro) {
             echo "Erro: " . $erro->getMessage();
+            header('Location: controllerpessoa.php');
         }
     }
 }

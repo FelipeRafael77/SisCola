@@ -8,7 +8,7 @@
 
 <body>
 
-	<form action="controllerpessoa.php" method="post">
+	<form action="controllerpessoa.php" method="POST">
        
        <div class="text-center"> 
         <br><h1>Cadastro de Pessoa</h1><br>
@@ -39,26 +39,21 @@
         		Matrícula do Aluno: <input class="form-control mr-sm-2" type="number" name="mataluno">
         	</div>
         	<div class="form-check">
-        		<br><input class="form-check-input" type="checkbox" name="ativo" value="ativo">Ativo?</input></br>
+        		Status: <input class="form-control mr-sm-2" type="text" name="status">
         	</div>
         </div>
         <div class="form-row">
         	<div class="form-group col-md-3">
-        		
-                Login: <select class="custom-select" name="idLogin">
-        			<option selected>Selecione um login...</option>
-        			<option value="1">On</option>
-        			<option value="2">Two</option>
-        			<option value="3">Three</option>
-        		</select>
+        		Login: <input class="form-control mr-sm-2" type="text" name="login">
+                
         	</div>
         	<div class="form-group col-md-3">
-        		
-        	</div>
+        		Tipo: <input class="form-control mr-sm-2" type="text" name="tipo">
         </div>
 		
         <div class="text-center">
-        	<br><input class="btn btn-dark" type="submit" name="enviar" value="Enviar"></td><td>&nbsp;<a class="btn btn-outline-dark" onClick="window.history.back();">Cancelar</a>
+        	<br><input class="btn btn-dark ml-3 mr-3" type="submit" value="Enviar">
+                
         	</div>
 	
 	</form>
