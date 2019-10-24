@@ -10,10 +10,9 @@ if(!isset($_SESSION['login'])){
 include 'pessoa.php';
 $pessoa = new Pessoa();
 
-var_dump($_POST);
+
 if(!empty($_POST['nome'])){
-//var_dump($_POST);
-	echo "controller";
+
     $pessoa->setNome($_POST['nome']);
 	$pessoa->setRg($_POST['rg']);
 	$pessoa->setCpf($_POST['cpf']);
@@ -25,6 +24,8 @@ if(!empty($_POST['nome'])){
 	$pessoa->setLogin($_POST['login']);
 	$pessoa->setTipo($_POST['tipo']);
     $pessoa->incluirPessoa();
+
+    var_dump($_POST);
 
 //}else{
 //	if(@$_GET['acao'] == 'excluir'){

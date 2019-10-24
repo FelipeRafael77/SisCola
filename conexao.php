@@ -41,24 +41,19 @@ catch(PDOException $e)
 class Conexao {
 
     public static $conexao;
-    public $dbh;
+    private $dbh;
 
     public static function Singleton(){
         if(self::$conexao === null){
-            $class = __CLASS__;
-            self::$conexao = new Conexao("root", "", "localhost", "sisestagio");
+            self::$conexao = new Conexao();
         }
 
         return self::$conexao;
     }
 
-    private function __construct($login, $senha, $host, $banco){
-
-        $conexao = new PDO("mysql:host=localhost; dbname=sisestagio", "root", "");
-
-        $dsn = "mysql:dbname=$banco;host=$host";
+    private function __construct(){
         try{
-            $this->dbh = new \PDO($dsn,$login,$senha);
+            $this->dbh = new PDO("mysql:host=localhost; dbname=sisestagio", "root", "");
         }catch(\PDOException $e){
             die($e->getMessage()); 
 
