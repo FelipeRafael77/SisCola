@@ -7,19 +7,16 @@ if(!isset($_SESSION['login'])){
 }
 
 include 'utensilios.php';
-$utensilios = new Utensilios();
+$utensilios = new Utensilios_Escolares();
 
-if(!empty($_POST['nomeUtensilio'])){
+if(!empty($_POST['nome'])){
 
-
-
-	$utensilios->setNomeUtensilio($_POST['nomeUtensilio']);
+    $utensilios->setNomeUtensilio($_POST['nome']);
 	$utensilios->setEspecificacao($_POST['especificacao']);
 	$utensilios->setQuantidade($_POST['quantidade']);
-	$utensilios->setTelefone($_POST['telefone']);
-	$utensilios->incluirUtensilio();
-	include 'cadutensilios.php';
-	
+	$utensilios->setCategoria($_POST['categoria']);
+    $utensilios->setFornecedores($_POST['fornecedores']);
+    $utensilios->incluirUtensilio();
 
 //}else{
 //	if(@$_GET['acao'] == 'excluir'){

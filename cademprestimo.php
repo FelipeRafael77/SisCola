@@ -3,12 +3,12 @@
 <head>
 	<meta charset="utf-8">
 	<title>SisCola</title>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <body>
 
-	<form action="controlleremprestimo.php" method="post">
+	<form action="controlleremprestimo.php" method="POST">
         
         <div class="text-center"> 
         <br><h1>Cadastro de Empréstimo</h1><br>
@@ -19,19 +19,13 @@
         		Tipo de Empréstimo: <input class="form-control mr-sm-2" type="text" name="tipoEmprestimo">
         	</div>
         	<div class="form-group col-md-2">
-        		Data do Empréstimo: <input class="form-control mr-sm-2" type="number" name="dataEmprestimo">
+        		Data do Empréstimo: <input class="form-control mr-sm-2" type="text" name="dataEmprestimo">
         	</div>
         	<div class="form-group col-md-2">
         		Prazo: <input class="form-control mr-sm-2" type="number" name="prazo">
         	</div>
         	<div class="form-group col-md-3">
-        		Pessoa: <select class="custom-select" name="idPessoa">
-        			<option selected>Selecione uma pessoa...</option>
-        			<option value="1">On</option>
-        			<option value="2">Two</option>
-        			<option value="3">Three</option>
-        		</select>
-        	</div>
+        		Pessoa: <input class="form-control mr-sm-2" type="number" name="pessoa">
         	</div>
         </div>
 

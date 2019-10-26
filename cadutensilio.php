@@ -3,12 +3,12 @@
 <head>
 	<meta charset="utf-8">
 	<title>SisCola</title>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <body>
 
-	<form action="controllerutensilios.php" method="post">
+	<form action="controllerutensilios.php" method="POST">
 
 		<div class="text-center"> 
         <br><h1>Cadastro de Utensílios Escolares</h1><br>
@@ -21,26 +21,16 @@
         	<div class="form-group col-md-4">
         		Especificação: <input class="form-control mr-sm-2" type="text" name="especificacao">
         	</div>
-        	<div class="form-group col-md-2">
+        	<div class="form-group col-md-1">
         		Quantidade: <input class="form-control mr-sm-2" type="number" name="quantidade">
         	</div>
         </div>
         <div class="form-row">
         	<div class="form-group col-md-4">
-        		Categoria: <select class="custom-select">
-        			<option selected>Selecione uma categoria...</option>
-        			<option value="1">One</option>
-        			<option value="2">Two</option>
-        			<option value="3">Three</option>
-               </select>
+        		Categoria: <input class="form-control mr-sm-2" type="text" name="categoria">
         	</div>
         	<div class="form-group col-md-4">
-        		Fornecedores: <select class="custom-select">
-        			<option selected>Selecione um fornecedor...</option>
-        			<option value="1">One</option>
-        			<option value="2">Two</option>
-        			<option value="3">Three</option>
-        		</select>
+        		Fornecedores: <input class="form-control mr-sm-2" type="text" name="fornecedores">
         	</div>
         </div>
 		<div class="text-center">
