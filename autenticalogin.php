@@ -3,6 +3,7 @@
 include 'conexao.php';
 
 session_start();
+$_SESSION['login'] = $login;
 
 $login = $_POST['login'];
 $senha = $_POST['senha'];
@@ -18,7 +19,8 @@ if($stmt->execute()){
   	exit;
   }else{
         echo "<script>alert('Problema no login!');</script>";
-  	  	header("Location: telalogin.php");	
+  	  	header("Location: telalogin.php");
+        exit;
 	exit;
   	}
 }else{

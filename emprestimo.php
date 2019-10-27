@@ -34,19 +34,19 @@ class Emprestimo{
 	}
 
 	public function setDataEmprestimo($dataEmprestimo){
-		$this->dataEmprestimo = $dataEmprestimo;
+		$this->dataEmprestimo = date('Y-m-d', strtotime($dataEmprestimo));
 	}
 
 	public function getDataEmprestimo(){
-		return $this->dataEmprestimo;
+		return date('d/m/Y', strtotime($this->dataEmprestimo));
 	}
 
 	public function setPrazo($prazo){
-		$this->prazo = $prazo;
+		$this->prazo = date('Y-m-d', strtotime($prazo));
 	}
 
 	public function getPrazo(){
-		return $this->prazo;
+		return date('d/m/Y', strtotime($this->prazo));
 
 }
 	public function setPessoa($pessoa){
@@ -59,13 +59,10 @@ class Emprestimo{
 	public function incluirEmprestimo(){
 		
 		try {
-
-			$date = strtotime($dataEmprestimo);
-			$data_formatada = date('Y/m/d', $date);
 			
 			$stmt = $this->conexao->getStmt("INSERT INTO emprestimo (tipoEmprestimo, dataEmprestimo, prazo, idPessoa) VALUES (:tipoEmprestimo,:dataEmprestimo,:prazo,:idPessoa)");
 			$stmt->bindValue(":tipoEmprestimo", $this->tipoEmprestimo, PDO::PARAM_STR);
-			$stmt->bindValue(":dataEmprestimo", $this->data_formatada);
+			$stmt->bindValue(":dataEmprestimo", $this->dataEmprestimo, PDO::PARAM_STR);
 			$stmt->bindValue(":prazo", $this->prazo, PDO::PARAM_STR);
 			$stmt->bindValue(":idPessoa", $this->getPessoa(), PDO::PARAM_INT);
 			if ($stmt->execute()) {
@@ -80,8 +77,7 @@ class Emprestimo{
 					echo "<script>alert('Erro no cadastro!');</script>";
 					//header('Location: controlleremprestimo.php');
 				}
-			} else {
-				$stmt->debugDumpParams();  
+			} else { 
                 $arr = $stmt->errorInfo();
                 print_r($arr);
 				throw new PDOException("Erro: Não foi possível executar o sql");

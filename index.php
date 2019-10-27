@@ -33,8 +33,8 @@
 						<a class="nav-link dropdown-toggle" data-toggle="dropdown" id="Preview" href="#" role="button" aria-haspopup="true" aria-expanded="false">Movimentações</a>
 						<div class="dropdown-menu" aria-labelledby="Preview">
 							<a class="dropdown-item" href="cademprestimo.php">Empréstimo</a>
-							<a class="dropdown-item" href="#">Caixa</a>
-							<a class="dropdown-item" href="#">Multa</a>
+							<a class="dropdown-item" href="cadcaixa.php">Caixa</a>
+							<a class="dropdown-item" href="cadmulta.php">Multa</a>
 							<a class="dropdown-item" href="caddevolucao.php">Devolução</a>
 							<a class="dropdown-item" href="cadhistoricocaixa.php">Histórico do Caixa</a>
 						</div>

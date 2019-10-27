@@ -159,4 +159,14 @@ class Pessoa{
             //header('Location: controllerpessoa.php');
         }
     }
+
+
+        public function listarPessoa(){
+
+        $sql = $this->conexao->getStmt("SELECT idPessoa, nomePessoa, rgPessoa, cpfPessoa, enderecoPessoa, telefonePessoa, registroProfessor, matriculaAluno, status, idLogin, idTipo FROM pessoa");
+        if($sql->execute()){
+            return $sql->fetchAll();
+        }
+
+    }
 }

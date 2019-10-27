@@ -11,7 +11,8 @@
 	<form action="controllerpessoa.php" method="POST">
        
        <div class="text-center"> 
-        <br><h1>Cadastro de Pessoa</h1><br>
+        <br><h1>Cadastro de Pessoa</h1>
+        <a href="listpessoas.php">Ver dados já cadastrados</a>
        </div>
         
         <div class="form-row">
@@ -52,10 +53,9 @@
         </div>
 		
         <div class="text-center">
-        	<br><input class="btn btn-dark ml-3 mr-3" type="submit" value="Enviar">
-                
+        	<br><td></td><input class="btn btn-dark ml-3 mr-3" type="submit" value="Enviar"></td>
+                <a class="btn btn-outline-dark" onClick="window.history.back();">Cancelar</a>
         	</div>
-	
 	</form>
 	
 </body>

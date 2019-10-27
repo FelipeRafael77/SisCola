@@ -7,20 +7,17 @@ if(!isset($_SESSION['login'])){
 	exit;
 }
 
-include 'caixa.php';
-$caixa = new Caixa();
+include 'multa.php';
+$multa = new Multa();
 
 
-if(!empty($_POST['dataAbertura'])){
+if(!empty($_POST['data'])){
 
-    $caixa->setDataAbertura($_POST['dataAbertura']);
-	$caixa->setSaldo($_POST['saldo']);
-	$caixa->setEntrada($_POST['entrada']);
-	$caixa->setSaida($_POST['saida']);
-	$caixa->setHistorico($_POST['historico']);
-	$caixa->setMulta($_POST['multa']);
-    $caixa->incluirCaixa();
-    include 'cadcaixa.php';
+    $multa->setData($_POST['data']);
+	$multa->setValor($_POST['valor']);
+	$multa->setDevolucao($_POST['devolucao']);
+    $multa->incluirMulta();
+    include 'cadmulta.php';
 
 //}else{
 //	if(@$_GET['acao'] == 'excluir'){

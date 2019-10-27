@@ -19,10 +19,10 @@
         		Tipo de Empréstimo: <input class="form-control mr-sm-2" type="text" name="tipoEmprestimo">
         	</div>
         	<div class="form-group col-md-2">
-        		Data do Empréstimo: <input class="form-control mr-sm-2" type="text" name="dataEmprestimo">
+        		Data do Empréstimo: <input class="form-control mr-sm-2" type="date" name="dataEmprestimo">
         	</div>
         	<div class="form-group col-md-2">
-        		Prazo: <input class="form-control mr-sm-2" type="number" name="prazo">
+        		Prazo: <input class="form-control mr-sm-2" type="date" name="prazo">
         	</div>
         	<div class="form-group col-md-3">
         		Pessoa: <input class="form-control mr-sm-2" type="number" name="pessoa">

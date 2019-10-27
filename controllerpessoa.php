@@ -27,19 +27,16 @@ if(!empty($_POST['nome'])){
 
     var_dump($_POST);
 
-//}else{
-//	if(@$_GET['acao'] == 'excluir'){
-//		if($usuario->deletaUsuario($_GET['id_usuario'])){
-//			echo "<script>alert('Dado excluído com sucesso!');</script>";
-//			header('Location: controllerpessoa.php');
+}/*else{
+	if(@$_GET['acao'] == 'excluir'){
+		if($pessoa->deletaPessoa($_GET['idPessoa'])){
+			echo "<script>alert('Dado excluído com sucesso!');</script>";
+			header('Location: controllerpessoa.php');
 			
-//		} else {
-//			echo "<script>alert('Erro na exclusão!');</script>";
-//			header('Location: controllerpessoa.php');
-//		}
-         
-
-	//}
+		} else {
+			echo "<script>alert('Erro na exclusão!');</script>";
+			header('Location: controllerpessoa.php');
+	}
 }
-
+}*/
 ?>

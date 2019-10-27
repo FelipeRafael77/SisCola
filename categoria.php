@@ -49,4 +49,13 @@ class Categoria{
             echo "Erro: " . $erro->getMessage();
         }
     }
+
+    public function listarCategoria(){
+
+        $sql = $this->conexao->getStmt("SELECT idCategoria, nomeCategoria FROM categoria");
+        if($sql->execute()){
+            return $sql->fetchAll();
+        }
+
+    }
 }
