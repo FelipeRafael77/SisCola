@@ -8,14 +8,15 @@
 
 <body>
 
-	<form action="controllermulta.php" method="POST">
+	<form class="text-center" action="controllermulta.php" method="POST">
        
        <div class="text-center"> 
-        <br><h1>Multa</h1><br>
+        <br><h1>Multa</h1>
+        <a href="listmulta.php">Ver dados já cadastrados</a>
        </div>
         
         <div class="form-row">
-        	<div class="form-group col-md-2">
+        	<div class="form-group col-md-2 offset-md-3">
         		Data: <input class="form-control mr-sm-2" type="date" name="data">
         	</div>
         	<div class="form-group col-md-2">
@@ -27,9 +28,9 @@
         </div>
 		
         <div class="text-center">
-        	<br><input class="btn btn-dark ml-3 mr-3" type="submit" value="Enviar">
-                
-        	</div>
+            <br><td></td><input class="btn btn-dark ml-3 mr-3" type="submit" value="Enviar"></td>
+                <a class="btn btn-outline-dark" onClick="window.history.back();">Cancelar</a>
+            </div>
 	
 	</form>
 	

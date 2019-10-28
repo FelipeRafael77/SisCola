@@ -49,4 +49,13 @@ class Historico_Caixa{
             echo "Erro: " . $erro->getMessage();
         }
     }
+
+    public function listarHistorico(){
+
+        $sql = $this->conexao->getStmt("SELECT idHistorico_Caixa, descricao FROM historico_caixa");
+        if($sql->execute()){
+            return $sql->fetchAll();
+        }
+
+    }
 }

@@ -53,4 +53,13 @@ class Devolucao{
             echo "Erro: " . $erro->getMessage();
         }
     }
+
+    public function listarDevolucao(){
+
+        $sql = $this->conexao->getStmt("SELECT idDevolucao, dataDevolucao FROM devolucao");
+        if($sql->execute()){
+            return $sql->fetchAll();
+        }
+
+    }
 }

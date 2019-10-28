@@ -78,12 +78,19 @@ class Emprestimo{
 					//header('Location: controlleremprestimo.php');
 				}
 			} else { 
-                $arr = $stmt->errorInfo();
-                print_r($arr);
 				throw new PDOException("Erro: Não foi possível executar o sql");
 			}
 		} catch (PDOException $erro) {
 			echo "Erro: " . $erro->getMessage();
 		}
 	}
+
+	public function listarEmprestimo(){
+
+        $sql = $this->conexao->getStmt("SELECT idEmprestimo, tipoEmprestimo, dataEmprestimo, prazo, idPessoa FROM emprestimo");
+        if($sql->execute()){
+            return $sql->fetchAll();
+        }
+
+    }
 }

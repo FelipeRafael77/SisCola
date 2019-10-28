@@ -67,19 +67,24 @@ class Multa{
                     $devolucao = null;
                     
                 } else {
-                    echo "2";
                     echo "<script>alert('Erro no cadastro!');</script>";
                     //header('Location: controllerpessoa.php');
                 }
             } else {
-                $stmt->debugDumpParams();  
-                $arr = $stmt->errorInfo();
-                print_r($arr);
                 throw new PDOException("Erro: Não foi possível executar o sql");
             }
         } catch (PDOException $erro) {
             echo "Erro: " . $erro->getMessage();
             //header('Location: controllerpessoa.php');
         }
+    }
+
+    public function listarMulta(){
+
+        $sql = $this->conexao->getStmt("SELECT idMulta, data, valor, idDevolucao FROM multa");
+        if($sql->execute()){
+            return $sql->fetchAll();
+        }
+
     }
 }

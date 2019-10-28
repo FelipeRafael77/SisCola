@@ -83,4 +83,13 @@ class Fornecedores{
 			echo "Erro: " . $erro->getMessage();
 		}
 	}
+
+    public function listarFornecedores(){
+
+        $sql = $this->conexao->getStmt("SELECT idFornecedores, nomeFornecedor, cnpjFornecedor, enderecoFornecedor, telefoneFornecedor FROM fornecedores");
+        if($sql->execute()){
+            return $sql->fetchAll();
+        }
+
+    }
 }

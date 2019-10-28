@@ -11,7 +11,8 @@
 	<form action="controlleremprestimo.php" method="POST">
         
         <div class="text-center"> 
-        <br><h1>Cadastro de Empréstimo</h1><br>
+        <br><h1>Cadastro de Empréstimo</h1>
+        <a href="listemprestimo.php">Ver dados já cadastrados</a>
        </div>
 
        <div class="form-row">

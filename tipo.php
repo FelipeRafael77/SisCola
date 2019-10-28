@@ -49,4 +49,13 @@ class Tipo{
             echo "Erro: " . $erro->getMessage();
         }
     }
+
+    public function listarTipo(){
+
+        $sql = $this->conexao->getStmt("SELECT idTipo, descricao FROM tipo");
+        if($sql->execute()){
+            return $sql->fetchAll();
+        }
+
+    }
 }

@@ -8,7 +8,7 @@ $_SESSION['login'] = $login;
 $login = $_POST['login'];
 $senha = $_POST['senha'];
 $conexao = Conexao::Singleton();
-$stmt = $conexao->getStmt("SELECT * FROM login WHERE login=:login and senha=:senha");
+$stmt = $conexao->getStmt("SELECT * FROM login WHERE login=:login and senha=:senha limit 1");
 $stmt->bindValue(":login", $login);
 $stmt->bindValue(":senha", $senha);
 
