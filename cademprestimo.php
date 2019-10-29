@@ -8,7 +8,7 @@
 
 <body>
 
-	<form action="controlleremprestimo.php" method="POST">
+	<form class="text-center" action="controlleremprestimo.php" method="POST">
         
         <div class="text-center"> 
         <br><h1>Cadastro de Empréstimo</h1>
@@ -16,7 +16,7 @@
        </div>
 
        <div class="form-row">
-        	<div class="form-group col-md-4">
+        	<div class="form-group col-md-2 offset-md-2">
         		Tipo de Empréstimo: <input class="form-control mr-sm-2" type="text" name="tipoEmprestimo">
         	</div>
         	<div class="form-group col-md-2">
@@ -25,7 +25,7 @@
         	<div class="form-group col-md-2">
         		Prazo: <input class="form-control mr-sm-2" type="date" name="prazo">
         	</div>
-        	<div class="form-group col-md-3">
+        	<div class="form-group col-md-2">
         		Pessoa: <input class="form-control mr-sm-2" type="number" name="pessoa">
         	</div>
         </div>

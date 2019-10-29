@@ -8,7 +8,7 @@
 
 <body>
 
-	<form class="ml-5" action="controllerfornecedores.php" method="POST">
+	<form class="text-center" action="controllerfornecedores.php" method="POST">
 
 		<div class="text-center"> 
         <br><h1>Cadastro de Fornecedores</h1>
@@ -16,7 +16,7 @@
        </div>
         
         <div class="form-row">
-        	<div class="form-group col-md-4">
+        	<div class="form-group col-md-2 offset-md-2">
         		Nome: <input class="form-control mr-sm-2" type="text" name="nomeFornecedor">
         	</div>
         	<div class="form-group col-md-2">
@@ -25,12 +25,12 @@
         	<div class="form-group col-md-2">
         		Endereço: <input class="form-control mr-sm-2" type="text" name="enderecoFornecedor">
         	</div>
-        	<div class="form-group col-md-3">
+        	<div class="form-group col-md-2">
         		Telefone: <input class="form-control mr-sm-2" type="text" name="telefoneFornecedor">
         	</div>
         </div>
 		<div class="text-center">
-        	<br><input class="btn btn-dark" type="submit" name="enviar" value="Enviar"></td><td>&nbsp;<a class="btn btn-outline-dark" onClick="window.history.back();">Cancelar</a>
+        	<br><input class="btn btn-dark ml-3 mr-2" type="submit" name="enviar" value="Enviar"></td><td><a class="btn btn-outline-dark" onClick="window.history.back();">Cancelar</a>
         	</div>
 	</form>
 	

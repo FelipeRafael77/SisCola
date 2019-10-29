@@ -17,6 +17,7 @@ if(!empty($_POST['nome'])){
 	$utensilios->setCategoria($_POST['categoria']);
     $utensilios->setFornecedores($_POST['fornecedores']);
     $utensilios->incluirUtensilio();
+    include 'cadutensilio.php';
 
 //}else{
 //	if(@$_GET['acao'] == 'excluir'){

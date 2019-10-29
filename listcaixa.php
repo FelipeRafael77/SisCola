@@ -11,7 +11,7 @@
     <h1>Dados cadastrados</h1>
 </div>
 
-    <br><br><table class="table table-striped">
+    <br><br><table class="table table-striped text-center">
                 <thead>
                     <th>id</th>
                     <th>Data de Abertura</th>

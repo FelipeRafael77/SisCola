@@ -8,7 +8,7 @@
 
 <body>
 
-	<form action="controllerpessoa.php" method="POST">
+	<form class="text-center" action="controllerpessoa.php" method="POST">
        
        <div class="text-center"> 
         <br><h1>Cadastro de Pessoa</h1>
@@ -16,7 +16,7 @@
        </div>
         
         <div class="form-row">
-        	<div class="form-group col-md-4">
+        	<div class="form-group col-md-4 ml-3">
         		Nome: <input class="form-control mr-sm-2" type="text" name="nome">
         	</div>
         	<div class="form-group col-md-2">
@@ -30,7 +30,7 @@
         	</div>
         </div>
         <div class="form-row">
-        	<div class="form-group col-md-3">
+        	<div class="form-group col-md-3 ml-3">
         		Telefone: <input class="form-control mr-sm-2" type="number" name="telefone">
         	</div>
         	<div class="form-group col-md-3">
@@ -44,15 +44,15 @@
         	</div>
         </div>
         <div class="form-row">
-        	<div class="form-group col-md-3">
+        	<div class="form-group col-md-2 offset-md-4">
         		Login: <input class="form-control mr-sm-2" type="text" name="login">
-                
-        	</div>
-        	<div class="form-group col-md-3">
-        		Tipo: <input class="form-control mr-sm-2" type="text" name="tipo">
-        </div>
-		
-        <div class="text-center">
+            </div>
+
+            <div class="form-group col-md-2">
+              Tipo: <input class="form-control mr-sm-2" type="text" name="tipo">
+          </div>
+      </div>
+        <div>
         	<br><td></td><input class="btn btn-dark ml-3 mr-3" type="submit" value="Enviar"></td>
                 <a class="btn btn-outline-dark" onClick="window.history.back();">Cancelar</a>
         	</div>

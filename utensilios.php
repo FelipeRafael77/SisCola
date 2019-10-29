@@ -100,4 +100,13 @@ class Utensilios_Escolares{
 			echo "Erro: " . $erro->getMessage();
 		}
 	}
+
+	public function listarUtensilios(){
+
+        $sql = $this->conexao->getStmt("SELECT idUtensilios, nomeUtensilio, especificacao, quantidade, idCategoria, idFornecedores FROM utensilios_escolares");
+        if($sql->execute()){
+            return $sql->fetchAll();
+        }
+
+    }
 }

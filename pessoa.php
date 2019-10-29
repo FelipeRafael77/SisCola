@@ -149,9 +149,6 @@ class Pessoa{
                     //header('Location: controllerpessoa.php');
                 }
             } else {
-                $stmt->debugDumpParams();  
-                $arr = $stmt->errorInfo();
-                print_r($arr);
                 throw new PDOException("Erro: Não foi possível executar o sql");
             }
         } catch (PDOException $erro) {

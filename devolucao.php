@@ -21,22 +21,19 @@ class Devolucao{
     }
 
     public function setdataDevolucao($dataDevolucao){
-    	$this->dataDevolucao = $dataDevolucao;
+    	$this->dataDevolucao = date('Y-m-d', strtotime($dataDevolucao));
     }
     public function getdataDevolucao(){
-        return $this->dataDevolucao;
+        return date('d/m/Y', strtotime($this->dataDevolucao));
     }
 
 
     public function incluirDevolucao(){
     	
     	try {
-
-    		$date = strtotime($dataDevolucao);
-			$data_formatada = date('Y/m/d', $date);
             
             $stmt = $this->conexao->getStmt("INSERT INTO devolucao (dataDevolucao) VALUES (:dataDevolucao)");
-            $stmt->bindValue(":dataDevolucao", $data_formatada);
+            $stmt->bindValue(":dataDevolucao", $this->dataDevolucao, PDO::PARAM_STR);
             if ($stmt->execute()) {
                 if ($stmt->rowCount() > 0) {
                     echo "<script>alert('Dados inseridos com sucesso!');</script>";

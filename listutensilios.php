@@ -14,17 +14,21 @@
     <br><br><table class="table table-striped text-center">
                 <thead>
                     <th>id</th>
+                    <th>Nome</th>
+                    <th>Especificação</th>
+                    <th>Quantidade</th>
                     <th>Categoria</th>
+                    <th>Fornecedores</th>
                 </thead>
                 <?php
 
-                include_once 'categoria.php';
-                $categoria = new Categoria();
+                include_once 'utensilios.php';
+                $utensilios = new Utensilios_Escolares();
 
-                $listCategoria=$categoria->listarCategoria();
+                $listUtensilios=$utensilios->listarUtensilios();
 
-                foreach ($listCategoria as $key) {
-                    echo "<tr><td>".$key['idCategoria']."</td><td>".$key['nomeCategoria']."</td></tr>";
+                foreach ($listUtensilios as $key) {
+                    echo "<tr><td>".$key['idUtensilios']."</td><td>".$key['nomeUtensilio']."</td><td>".$key['especificacao']."</td><td>".$key['quantidade']."</td><td>".$key['idCategoria']."</td><td>".$key['idFornecedores']."</td><</td></tr>";
                 }
                 ?>
             </table>

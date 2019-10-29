@@ -8,7 +8,7 @@
 
 <body>
 
-	<form action="controllercaixa.php" method="POST">
+	<form class="text-center" action="controllercaixa.php" method="POST">
        
        <div class="text-center"> 
         <br><h1>Cadastro de Caixa</h1>
@@ -16,7 +16,7 @@
        </div>
         
         <div class="form-row">
-        	<div class="form-group ml-2 col-md-2">
+        	<div class="form-group col-md-2">
         		Data de Abertura: <input class="form-control mr-sm-2" type="date" name="dataAbertura">
         	</div>
         	<div class="form-group col-md-2">
@@ -28,10 +28,10 @@
         	<div class="form-group col-md-2">
         		Saída: <input class="form-control mr-sm-2" type="number" name="saida">
         	</div>
-            <div class="form-group col-md-1">
+            <div class="form-group col-md-2">
                 Histórico: <input class="form-control mr-sm-2" type="number" name="historico">
             </div>
-            <div class="form-group col-md-1">
+            <div class="form-group col-md-2">
                 Multa: <input class="form-control mr-sm-2" type="number" name="multa">
             </div>
         </div>

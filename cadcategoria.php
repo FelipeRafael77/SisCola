@@ -8,7 +8,7 @@
 
 <body>
 
-    <form action="controllercategoria.php" method="POST">
+    <form class="text-center" action="controllercategoria.php" method="POST">
 
     	<div class="text-center"> 
         <br><h1>Cadastro de Categoria</h1>
@@ -16,7 +16,7 @@
        </div>
         
         <div class="form-row">
-        	<div class="form-group col-md-4">
+        	<div class="form-group col-md-4 offset-md-4">
         		Categoria: <input class="form-control mr-sm-2" type="text" name="nomeCategoria">
         	</div>
         </div>

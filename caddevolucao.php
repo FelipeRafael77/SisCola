@@ -8,7 +8,7 @@
 
 <body>
 
-	<form action="controllerdevolucao.php" method="post">
+	<form class="text-center" action="controllerdevolucao.php" method="post">
         
         <div class="text-center"> 
         <br><h1>Cadastro de Devolução</h1>
@@ -16,8 +16,8 @@
        </div>
 
        <div class="form-row">
-        	<div class="form-group col-md-4">
-        		Data de Devolução: <input class="form-control mr-sm-2" type="text" name="dataDevolucao">
+        	<div class="form-group col-md-2 offset-md-5">
+        		Data de Devolução: <input class="form-control mr-sm-2" type="date" name="dataDevolucao">
         	</div>
         </div>
 
