@@ -20,25 +20,49 @@
         		Data de Abertura: <input class="form-control mr-sm-2" type="date" name="dataAbertura">
         	</div>
         	<div class="form-group col-md-2">
-        		Saldo: <input class="form-control mr-sm-2" type="number" name="saldo">
+        		Saldo: <input class="form-control mr-sm-2" type="text" name="saldo">
         	</div>
         	<div class="form-group col-md-2">
-        		Entrada: <input class="form-control mr-sm-2" type="number" name="entrada">
+        		Entrada: <input class="form-control mr-sm-2" type="text" name="entrada">
         	</div>
         	<div class="form-group col-md-2">
-        		Saída: <input class="form-control mr-sm-2" type="number" name="saida">
+        		Saída: <input class="form-control mr-sm-2" type="text" name="saida">
         	</div>
             <div class="form-group col-md-2">
-                Histórico: <input class="form-control mr-sm-2" type="number" name="historico">
+                <?php
+            require_once('conexao.php');
+            $conexao = new PDO( 'mysql:host=localhost;dbname=sisestagio' , 'root' , '' );
+            $stmt = $conexao-> prepare( 'SELECT idHistorico_Caixa, descricao FROM historico_caixa' );
+            $stmt-> execute();
+            $resultado = $stmt-> fetchAll( PDO::FETCH_ASSOC );
+            ?>
+            Histórico: <select class="form-control mr-sm-2" name="select_historico">
+                <option>Selecione...</option>
+                <?php foreach( $resultado as $row ) { ?>  
+                <option value="<?php echo $row['idHistorico_Caixa'];?>"><?php echo $row['descricao'];?></option>
+               <?php } ?>
+            </select>
             </div>
             <div class="form-group col-md-2">
-                Multa: <input class="form-control mr-sm-2" type="number" name="multa">
+                <?php
+            require_once('conexao.php');
+            $conexao = new PDO( 'mysql:host=localhost;dbname=sisestagio' , 'root' , '' );
+            $stmt = $conexao-> prepare( 'SELECT idMulta, data FROM multa' );
+            $stmt-> execute();
+            $resultado = $stmt-> fetchAll( PDO::FETCH_ASSOC );
+            ?>
+            Multa: <select class="form-control mr-sm-2" name="select_multa">
+                <option>Selecione...</option>
+                <?php foreach( $resultado as $row ) { ?>  
+                <option value="<?php echo $row['idMulta'];?>"><?php echo $row['data'];?></option>
+               <?php } ?>
+            </select>
             </div>
         </div>
 		
         <div class="text-center">
         	<br><input class="btn btn-dark ml-3 mr-3" type="submit" value="Enviar">
-                
+                <a class="btn btn-outline-dark" onClick="window.history.back();">Cancelar</a>
         	</div>
 	
 	</form>

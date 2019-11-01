@@ -15,9 +15,9 @@ if(!empty($_POST['data'])){
 
     $multa->setData($_POST['data']);
 	$multa->setValor($_POST['valor']);
-	$multa->setDevolucao($_POST['devolucao']);
+	$multa->setDevolucao($_POST['select_devolucao']);
     $multa->incluirMulta();
-    include 'cadmulta.php';
+    header('Location: cadmulta.php');
 
 //}else{
 //	if(@$_GET['acao'] == 'excluir'){

@@ -144,7 +144,6 @@ class Pessoa{
                     $login = null;
                     $tipo = null;
                 } else {
-                    echo "2";
                     echo "<script>alert('Erro no cadastro!');</script>";
                     //header('Location: controllerpessoa.php');
                 }

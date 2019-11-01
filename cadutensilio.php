@@ -26,10 +26,34 @@
         		Quantidade: <input class="form-control mr-sm-2" type="number" name="quantidade">
         	</div>
             <div class="form-group col-md-2">
-                Categoria: <input class="form-control mr-sm-2" type="text" name="categoria">
+                <?php
+            require_once('conexao.php');
+            $conexao = new PDO( 'mysql:host=localhost;dbname=sisestagio' , 'root' , '' );
+            $stmt = $conexao-> prepare( 'SELECT idCategoria, nomeCategoria FROM categoria' );
+            $stmt-> execute();
+            $resultado = $stmt-> fetchAll( PDO::FETCH_ASSOC );
+            ?>
+            Categoria: <select class="form-control mr-sm-2" name="select_categoria">
+                <option>Selecione...</option>
+                <?php foreach( $resultado as $row ) { ?>  
+                <option value="<?php echo $row['idCategoria'];?>"><?php echo $row['nomeCategoria'];?></option>
+               <?php } ?>
+            </select>
             </div>
             <div class="form-group col-md-2">
-                Fornecedores: <input class="form-control mr-sm-2" type="text" name="fornecedores">
+                <?php
+            require_once('conexao.php');
+            $conexao = new PDO( 'mysql:host=localhost;dbname=sisestagio' , 'root' , '' );
+            $stmt = $conexao-> prepare( 'SELECT idFornecedores, nomeFornecedor FROM fornecedores' );
+            $stmt-> execute();
+            $resultado = $stmt-> fetchAll( PDO::FETCH_ASSOC );
+            ?>
+            Fornecedor: <select class="form-control mr-sm-2" name="select_fornecedor">
+                <option>Selecione...</option>
+                <?php foreach( $resultado as $row ) { ?>  
+                <option value="<?php echo $row['idFornecedores'];?>"><?php echo $row['nomeFornecedor'];?></option>
+               <?php } ?>
+            </select>
             </div>
         </div>
 		<div class="text-center">

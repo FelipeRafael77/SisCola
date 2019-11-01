@@ -23,7 +23,19 @@
         		Valor: <input class="form-control mr-sm-2" type="text" name="valor">
         	</div>
         	<div class="form-group col-md-2">
-        		Devolução: <input class="form-control mr-sm-2" type="number" name="devolucao">
+        		<?php
+            require_once('conexao.php');
+            $conexao = new PDO( 'mysql:host=localhost;dbname=sisestagio' , 'root' , '' );
+            $stmt = $conexao-> prepare( 'SELECT idDevolucao, dataDevolucao FROM devolucao' );
+            $stmt-> execute();
+            $resultado = $stmt-> fetchAll( PDO::FETCH_ASSOC );
+            ?>
+            Devolução: <select class="form-control mr-sm-2" name="select_devolucao">
+                <option>Selecione...</option>
+                <?php foreach( $resultado as $row ) { ?>  
+                <option value="<?php echo $row['idDevolucao'];?>"><?php echo $row['dataDevolucao'];?></option>
+               <?php } ?>
+            </select>
         	</div>
         </div>
 		

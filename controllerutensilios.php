@@ -14,10 +14,10 @@ if(!empty($_POST['nome'])){
     $utensilios->setNomeUtensilio($_POST['nome']);
 	$utensilios->setEspecificacao($_POST['especificacao']);
 	$utensilios->setQuantidade($_POST['quantidade']);
-	$utensilios->setCategoria($_POST['categoria']);
-    $utensilios->setFornecedores($_POST['fornecedores']);
+	$utensilios->setCategoria($_POST['select_categoria']);
+    $utensilios->setFornecedores($_POST['select_fornecedor']);
     $utensilios->incluirUtensilio();
-    include 'cadutensilio.php';
+    header('Location: cadutensilio.php');
 
 //}else{
 //	if(@$_GET['acao'] == 'excluir'){

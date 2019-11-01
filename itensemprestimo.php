@@ -1,8 +1,8 @@
 <?php
 
 include_once 'conexao.php';
-include 'utensilios.php';
-include 'emprestimo.php';
+include_once 'utensilios.php';
+include_once 'emprestimo.php';
 
 class Itens_Emprestimo{
     
@@ -14,7 +14,7 @@ class Itens_Emprestimo{
 
     public function __construct(){
         $this->conexao = Conexao::Singleton();
-        $this->utensilios = new Utensilios();
+        $this->utensilios = new Utensilios_Escolares();
         $this->emprestimo = new Emprestimo();
     }
 
@@ -48,31 +48,5 @@ class Itens_Emprestimo{
 
     public function getEmprestimo(){
         return $this->emprestimo;
-    }
-
-    public function incluirItensEmprestimo(){
-        try {
-            
-            $stmt = $this->conexao->getStmt("INSERT INTO itens_emprestimo (quantidade, idUtensilios, idEmprestimo) VALUES (:quantidade,:idUtensilios,:idEmprestimo)");
-            $stmt->bindValue(":quantidade", $this->quantidade, PDO::PARAM_STR);
-            $stmt->bindValue(":idUtensilios", $this->utensilios->getUtensilios()->getId(), PDO::PARAM_INT);
-            $stmt->bindValue(":idEmprestimo", $this->emprestimo->getEmprestimo()->getId(), PDO::PARAM_INT);
-            if ($stmt->execute()) {
-                if ($stmt->rowCount() > 0) {
-                    echo "<script>alert('Dados inseridos com sucesso!');</script>";
-                    //header('Location: controlleritensemprestimo.php');
-                    $quantidade = null;
-                    $utensilios = null;
-                    $emprestimo = null;
-                } else {
-                    echo "<script>alert('Erro no cadastro!');</script>";
-                    header('Location: controlleritensemprestimo.php');
-                }
-            } else {
-                throw new PDOException("Erro: Não foi possível executar o sql");
-            }
-        } catch (PDOException $erro) {
-            echo "Erro: " . $erro->getMessage();
-        }
     }
 }

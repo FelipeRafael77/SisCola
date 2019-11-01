@@ -26,7 +26,19 @@
         		Prazo: <input class="form-control mr-sm-2" type="date" name="prazo">
         	</div>
         	<div class="form-group col-md-2">
-        		Pessoa: <input class="form-control mr-sm-2" type="number" name="pessoa">
+        		<?php
+            require_once('conexao.php');
+            $conexao = new PDO( 'mysql:host=localhost;dbname=sisestagio' , 'root' , '' );
+            $stmt = $conexao-> prepare( 'SELECT idPessoa, nomePessoa FROM pessoa' );
+            $stmt-> execute();
+            $resultado = $stmt-> fetchAll( PDO::FETCH_ASSOC );
+            ?>
+            Pessoa: <select class="form-control mr-sm-2" name="select_pessoa">
+                <option>Selecione...</option>
+                <?php foreach( $resultado as $row ) { ?>  
+                <option value="<?php echo $row['idPessoa'];?>"><?php echo $row['nomePessoa'];?></option>
+               <?php } ?>
+            </select>
         	</div>
         </div>
 

@@ -44,12 +44,36 @@
         	</div>
         </div>
         <div class="form-row">
-        	<div class="form-group col-md-2 offset-md-4">
-        		Login: <input class="form-control mr-sm-2" type="text" name="login">
-            </div>
+            <div class="form-group col-md-2 offset-md-4">
+            <?php
+            require_once('conexao.php');
+            $conexao = new PDO( 'mysql:host=localhost;dbname=sisestagio' , 'root' , '' );
+            $stmt = $conexao-> prepare( 'SELECT idLogin, login FROM login' );
+            $stmt-> execute();
+            $resultado = $stmt-> fetchAll( PDO::FETCH_ASSOC );
+            ?>
+            Login: <select class="form-control mr-sm-2" name="select_login">
+                <option>Selecione...</option>
+                <?php foreach( $resultado as $row ) { ?>  
+                <option value="<?php echo $row['idLogin'];?>"><?php echo $row['login'];?></option>
+               <?php } ?>
+            </select>
+        </div>
 
             <div class="form-group col-md-2">
-              Tipo: <input class="form-control mr-sm-2" type="text" name="tipo">
+              <?php
+            require_once('conexao.php');
+            $conexao = new PDO( 'mysql:host=localhost;dbname=sisestagio' , 'root' , '' );
+            $stmt = $conexao-> prepare( 'SELECT idTipo, descricao FROM tipo' );
+            $stmt-> execute();
+            $resultado = $stmt-> fetchAll( PDO::FETCH_ASSOC );
+            ?>
+            Tipo: <select class="form-control mr-sm-2" name="select_tipo">
+                <option>Selecione...</option>
+                <?php foreach( $resultado as $row ) { ?>  
+                <option value="<?php echo $row['idTipo'];?>"><?php echo $row['descricao'];?></option>
+               <?php } ?>
+            </select>
           </div>
       </div>
         <div>

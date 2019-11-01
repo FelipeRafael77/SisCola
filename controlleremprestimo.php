@@ -16,9 +16,9 @@ if(!empty($_POST['tipoEmprestimo'])){
     $emprestimo->setTipoEmprestimo($_POST['tipoEmprestimo']);
 	$emprestimo->setDataEmprestimo($_POST['dataEmprestimo']);
 	$emprestimo->setPrazo($_POST['prazo']);
-	$emprestimo->setPessoa($_POST['pessoa']);
+	$emprestimo->setPessoa($_POST['select_pessoa']);
     $emprestimo->incluirEmprestimo();
-    include 'cademprestimo.php';
+    header('Location: cademprestimo.php');
 	
 
 //}else{

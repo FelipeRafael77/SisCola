@@ -18,7 +18,7 @@
                     <th>Especificação</th>
                     <th>Quantidade</th>
                     <th>Categoria</th>
-                    <th>Fornecedores</th>
+                    <th>Fornecedor</th>
                 </thead>
                 <?php
 

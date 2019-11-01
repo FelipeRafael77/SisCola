@@ -17,8 +17,8 @@ if(!empty($_POST['dataAbertura'])){
 	$caixa->setSaldo($_POST['saldo']);
 	$caixa->setEntrada($_POST['entrada']);
 	$caixa->setSaida($_POST['saida']);
-	$caixa->setHistorico($_POST['historico']);
-	$caixa->setMulta($_POST['multa']);
+	$caixa->setHistorico($_POST['select_historico']);
+	$caixa->setMulta($_POST['select_multa']);
     $caixa->incluirCaixa();
     include 'cadcaixa.php';
 

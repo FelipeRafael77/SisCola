@@ -21,11 +21,10 @@ if(!empty($_POST['nome'])){
 	$pessoa->setRegProf($_POST['regprof']);
 	$pessoa->setMatAluno($_POST['mataluno']);
 	$pessoa->setStatus($_POST['status']);
-	$pessoa->setLogin($_POST['login']);
-	$pessoa->setTipo($_POST['tipo']);
+	$pessoa->setLogin($_POST['select_login']);
+	$pessoa->setTipo($_POST['select_tipo']);
     $pessoa->incluirPessoa();
-
-    var_dump($_POST);
+    header('Location: cadpessoa.php');
 
 }/*else{
 	if(@$_GET['acao'] == 'excluir'){
