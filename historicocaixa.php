@@ -58,4 +58,13 @@ class Historico_Caixa{
         }
 
     }
+
+    public function excluirHistorico($id){
+        $sql = $this->conexao->getStmt("DELETE FROM historico_caixa WHERE idHistorico_Caixa= ".$id);
+        if($sql->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }

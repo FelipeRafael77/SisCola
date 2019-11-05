@@ -165,4 +165,13 @@ class Pessoa{
         }
 
     }
+
+    public function excluirPessoa($id){
+        $sql = $this->conexao->getStmt("DELETE FROM pessoa WHERE idPessoa= ".$id);
+        if($sql->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }

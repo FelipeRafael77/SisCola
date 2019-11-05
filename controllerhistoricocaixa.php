@@ -15,22 +15,22 @@ if(!empty($_POST['descricao'])){
 
     $historicocaixa->setDescricao($_POST['descricao']);
     $historicocaixa->incluirHistoricoCaixa();
-    include 'cadhistoricocaixa.php';
+    header('Location: cadhistorico.php');
 	
 
-//}else{
-//	if(@$_GET['acao'] == 'excluir'){
-//		if($usuario->deletaUsuario($_GET['id_usuario'])){
-//			echo "<script>alert('Dado excluído com sucesso!');</script>";
-//			header('Location: controllerdevolucao.php');
+}else{
+	if(@$_GET['acao'] == 'excluir'){
+		if($historicocaixa->excluirHistorico($_GET['id'])){
+			echo "<script>alert('Dado excluído com sucesso!');</script>";
+			header('Location: listhistorico.php');
 			
-//		} else {
-//			echo "<script>alert('Erro na exclusão!');</script>";
-//			header('Location: controllerdevolucao.php');
-//		}
+		} else {
+			echo "<script>alert('Erro na exclusão!');</script>";
+			header('Location: listhistorico.php');
+		}
          
 
-	//}
+	}
 }
 
 ?>

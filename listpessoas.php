@@ -3,7 +3,7 @@
 <head>
     <title>SisCola</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
 
@@ -11,7 +11,7 @@
     <h1>Dados cadastrados</h1>
 </div>
 
-    <br><br><table class="table table-striped text-center">
+    <br><br><table class="table table-striped">
                 <thead>
                     <th>id</th>
                     <th>Nome</th>
@@ -24,6 +24,7 @@
                     <th>Status</th>
                     <th>Login</th>
                     <th>Tipo</th>
+                    <th>Excluir</th>
                 </thead>
                 <?php
 
@@ -33,7 +34,7 @@
                 $listPessoas=$pessoa->listarPessoa();
 
                 foreach ($listPessoas as $key) {
-                    echo "<tr><td>".$key['idPessoa']."</td><td>".$key['nomePessoa']."</td><td>".$key['rgPessoa']."</td><td>".$key['cpfPessoa']."</td><td>".$key['enderecoPessoa']."</td><td>".$key['telefonePessoa']."</td><td>".$key['registroProfessor']."</td><td>".$key['matriculaAluno']."</td><td>".$key['status']."</td><td>".$key['idLogin']."</td><td>".$key['idTipo']."</td></td></tr>";
+                    echo "<tr><td>".$key['idPessoa']."</td><td>".$key['nomePessoa']."</td><td>".$key['rgPessoa']."</td><td>".$key['cpfPessoa']."</td><td>".$key['enderecoPessoa']."</td><td>".$key['telefonePessoa']."</td><td>".$key['registroProfessor']."</td><td>".$key['matriculaAluno']."</td><td>".$key['status']."</td><td>".$key['idLogin']."</td><td>".$key['idTipo']."</td><td><a class='glyphicon glyphicon-trash' href='controllerpessoa.php?acao=excluir&id=".$key['idPessoa']."'></a></td></td></tr>";
                 }
                 ?>
             </table>

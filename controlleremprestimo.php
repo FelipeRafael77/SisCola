@@ -21,19 +21,19 @@ if(!empty($_POST['tipoEmprestimo'])){
     header('Location: cademprestimo.php');
 	
 
-//}else{
-//	if(@$_GET['acao'] == 'excluir'){
-//		if($usuario->deletaUsuario($_GET['id_usuario'])){
-//			echo "<script>alert('Dado excluído com sucesso!');</script>";
-//			header('Location: controlleremprestimo.php');
+}else{
+	if(@$_GET['acao'] == 'excluir'){
+		if($emprestimo->excluirEmprestimo($_GET['id'])){
+			echo "<script>alert('Dado excluído com sucesso!');</script>";
+			header('Location: listemprestimo.php');
 			
-//		} else {
-//			echo "<script>alert('Erro na exclusão!');</script>";
-//			header('Location: controlleremprestimo.php');
-//		}
+		} else {
+			echo "<script>alert('Erro na exclusão!');</script>";
+			header('Location: listemprestimo.php');
+		}
          
 
-	//}
+	}
 }
 
 ?>

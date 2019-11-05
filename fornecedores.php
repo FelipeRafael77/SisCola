@@ -92,4 +92,13 @@ class Fornecedores{
         }
 
     }
+
+    public function excluirFornecedor($id){
+        $sql = $this->conexao->getStmt("DELETE FROM fornecedores WHERE idFornecedores= ".$id);
+        if($sql->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }

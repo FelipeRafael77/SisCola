@@ -40,7 +40,7 @@
 						</div>
 					</li>
 					<li class="nav-item active">
-						<a class="nav-link" href="logout.php">Sair<span class="sr-only">(current)</span></a>
+						<a class="nav-link" href="logout.php">Sair<span class="sr-only"></span></a>
 					</li>
 				</ul>
 			</div>

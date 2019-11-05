@@ -19,22 +19,22 @@ if(!empty($_POST['nomeFornecedor'])){
 	$fornecedores->setEnderecoFornecedor($_POST['enderecoFornecedor']);
 	$fornecedores->setTelefoneFornecedor($_POST['telefoneFornecedor']);
 	$fornecedores->incluirFornecedor();
-	include 'cadfornecedores.php';
+	header('Location: cadfornecedores.php');
 	
 
-//}else{
-//	if(@$_GET['acao'] == 'excluir'){
-//		if($usuario->deletaUsuario($_GET['id_usuario'])){
-//			echo "<script>alert('Dado excluído com sucesso!');</script>";
-//			header('Location: controllerfornecedores.php');
-//			
-//		} else {
-//			echo "<script>alert('Erro na exclusão!');</script>";
-//			header('Location: controllerfornecedores.php');
-//		}
+}else{
+	if(@$_GET['acao'] == 'excluir'){
+		if($fornecedores->excluirFornecedor($_GET['id'])){
+			echo "<script>alert('Dado excluído com sucesso!');</script>";
+			header('Location: listfornecedores.php');
+			
+		} else {
+			echo "<script>alert('Erro na exclusão!');</script>";
+			header('Location: listfornecedores.php');
+	}
          
 
-//	}
+  }
 }
 
 ?>

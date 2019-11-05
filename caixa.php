@@ -126,4 +126,13 @@ class Caixa{
         }
 
     }
+
+    public function excluirCaixa($id){
+        $sql = $this->conexao->getStmt("DELETE FROM caixa WHERE idCaixa= ".$id);
+        if($sql->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }

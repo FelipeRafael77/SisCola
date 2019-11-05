@@ -109,4 +109,13 @@ class Utensilios_Escolares{
         }
 
     }
+
+    public function excluirUtensilios($id){
+        $sql = $this->conexao->getStmt("DELETE FROM utensilios_escolares WHERE idUtensilios= ".$id);
+        if($sql->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }

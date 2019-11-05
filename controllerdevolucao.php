@@ -15,22 +15,22 @@ if(!empty($_POST['dataDevolucao'])){
 
     $devolucao->setdataDevolucao($_POST['dataDevolucao']);
     $devolucao->incluirDevolucao();
-	include 'caddevolucao.php';
+	header('Location: caddevolucao.php');
 	
 
-//}else{
-//	if(@$_GET['acao'] == 'excluir'){
-//		if($usuario->deletaUsuario($_GET['id_usuario'])){
-//			echo "<script>alert('Dado excluído com sucesso!');</script>";
-//			header('Location: controllerdevolucao.php');
+}else{
+	if(@$_GET['acao'] == 'excluir'){
+		if($devolucao->excluirDevolucao($_GET['id'])){
+			echo "<script>alert('Dado excluído com sucesso!');</script>";
+			header('Location: listdevolucao.php');
 			
-//		} else {
-//			echo "<script>alert('Erro na exclusão!');</script>";
-//			header('Location: controllerdevolucao.php');
-//		}
+		} else {
+			echo "<script>alert('Erro na exclusão!');</script>";
+			header('Location: listdevolucao.php');
+		}
          
 
-	//}
+	}
 }
 
 ?>

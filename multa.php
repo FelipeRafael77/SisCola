@@ -87,4 +87,13 @@ class Multa{
         }
 
     }
+
+    public function excluirMulta($id){
+        $sql = $this->conexao->getStmt("DELETE FROM multa WHERE idMulta= ".$id);
+        if($sql->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }

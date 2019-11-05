@@ -19,19 +19,19 @@ if(!empty($_POST['data'])){
     $multa->incluirMulta();
     header('Location: cadmulta.php');
 
-//}else{
-//	if(@$_GET['acao'] == 'excluir'){
-//		if($usuario->deletaUsuario($_GET['id_usuario'])){
-//			echo "<script>alert('Dado excluído com sucesso!');</script>";
-//			header('Location: controllerpessoa.php');
+}else{
+	if(@$_GET['acao'] == 'excluir'){
+		if($multa->excluirMulta($_GET['id'])){
+			echo "<script>alert('Dado excluído com sucesso!');</script>";
+			header('Location: listmulta.php');
 			
-//		} else {
-//			echo "<script>alert('Erro na exclusão!');</script>";
-//			header('Location: controllerpessoa.php');
-//		}
+		} else {
+			echo "<script>alert('Erro na exclusão!');</script>";
+			header('Location: listmulta.php');
+		}
          
 
-	//}
+	}
 }
 
 ?>

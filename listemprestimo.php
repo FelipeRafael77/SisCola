@@ -3,7 +3,7 @@
 <head>
     <title>SisCola</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
 
@@ -11,13 +11,14 @@
     <h1>Dados cadastrados</h1>
 </div>
 
-    <br><br><table class="table table-striped text-center">
+    <br><br><table class="table table-striped">
                 <thead>
                     <th>id</th>
                     <th>Tipo de Empréstimo</th>
                     <th>Data de Empréstimo</th>
                     <th>Prazo</th>
                     <th>Pessoa</th>
+                    <th>Excluir</th>
                 </thead>
                 <?php
 
@@ -27,7 +28,7 @@
                 $listEmprestimo=$emprestimo->listarEmprestimo();
 
                 foreach ($listEmprestimo as $key) {
-                    echo "<tr><td>".$key['idEmprestimo']."</td><td>".$key['tipoEmprestimo']."</td><td>".$key['dataEmprestimo']."</td><td>".$key['prazo']."</td><td>".$key['idPessoa']."</td></td></tr>";
+                    echo "<tr><td>".$key['idEmprestimo']."</td><td>".$key['tipoEmprestimo']."</td><td>".$key['dataEmprestimo']."</td><td>".$key['prazo']."</td><td>".$key['idPessoa']."</td><td><a class='glyphicon glyphicon-trash' href='controlleremprestimo.php?acao=excluir&id=".$key['idEmprestimo']."'></a></td></td></tr>";
                 }
                 ?>
             </table>

@@ -20,21 +20,21 @@ if(!empty($_POST['dataAbertura'])){
 	$caixa->setHistorico($_POST['select_historico']);
 	$caixa->setMulta($_POST['select_multa']);
     $caixa->incluirCaixa();
-    include 'cadcaixa.php';
+    header('Location: cadcaixa.php');
 
-//}else{
-//	if(@$_GET['acao'] == 'excluir'){
-//		if($usuario->deletaUsuario($_GET['id_usuario'])){
-//			echo "<script>alert('Dado excluído com sucesso!');</script>";
-//			header('Location: controllerpessoa.php');
+}else{
+	if(@$_GET['acao'] == 'excluir'){
+		if($caixa->excluirCaixa($_GET['id'])){
+			echo "<script>alert('Dado excluído com sucesso!');</script>";
+			header('Location: listcaixa.php');
 			
-//		} else {
-//			echo "<script>alert('Erro na exclusão!');</script>";
-//			header('Location: controllerpessoa.php');
-//		}
+		} else {
+			echo "<script>alert('Erro na exclusão!');</script>";
+			header('Location: listcaixa.php');
+		}
          
 
-	//}
+	}
 }
 
 ?>

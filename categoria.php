@@ -58,4 +58,14 @@ class Categoria{
         }
 
     }
+
+     public function excluirCategoria($id){
+        $sql = $this->conexao->getStmt("DELETE FROM categoria WHERE idCategoria= ".$id);
+        if($sql->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
 }

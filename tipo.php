@@ -58,4 +58,14 @@ class Tipo{
         }
 
     }
+
+     public function excluirTipo($id){
+        $sql = $this->conexao->getStmt("DELETE FROM tipo WHERE idTipo= ".$id);
+        if($sql->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
 }

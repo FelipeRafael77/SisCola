@@ -10,10 +10,6 @@ class Emprestimo{
 	private $dataEmprestimo;
 	private $prazo;
 	private $pessoa;
-	private $sql_emprestimo;
-	private $resultado_emprestimo;
-	private $registro_emprestimo;
-	private $resultado_itens;
 	private $conexao;
 
 	public function __construct(){
@@ -96,5 +92,14 @@ class Emprestimo{
             return $sql->fetchAll();
         }
 
+    }
+
+    public function excluirEmprestimo($id){
+        $sql = $this->conexao->getStmt("DELETE FROM emprestimo WHERE idEmprestimo= ".$id);
+        if($sql->execute()){
+            return true;
+        }else{
+            return false;
+        }
     }
 }

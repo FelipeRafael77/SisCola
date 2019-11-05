@@ -26,16 +26,16 @@ if(!empty($_POST['nome'])){
     $pessoa->incluirPessoa();
     header('Location: cadpessoa.php');
 
-}/*else{
+}else{
 	if(@$_GET['acao'] == 'excluir'){
-		if($pessoa->deletaPessoa($_GET['idPessoa'])){
+		if($pessoa->excluirPessoa($_GET['id'])){
 			echo "<script>alert('Dado excluído com sucesso!');</script>";
-			header('Location: controllerpessoa.php');
+			header('Location: listpessoas.php');
 			
 		} else {
 			echo "<script>alert('Erro na exclusão!');</script>";
-			header('Location: controllerpessoa.php');
+			header('Location: listpessoas.php');
 	}
 }
-}*/
+}
 ?>

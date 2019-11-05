@@ -19,19 +19,17 @@ if(!empty($_POST['nome'])){
     $utensilios->incluirUtensilio();
     header('Location: cadutensilio.php');
 
-//}else{
-//	if(@$_GET['acao'] == 'excluir'){
-//		if($usuario->deletaUsuario($_GET['id_usuario'])){
-//			echo "<script>alert('Dado excluído com sucesso!');</script>";
-//			header('Location: controllerutensilios.php');
-//			
-//		} else {
-//			echo "<script>alert('Erro na exclusão!');</script>";
-//			header('Location: controllerutensilios.php');
-//		}
-         
-
-//	}
+}else{
+	if(@$_GET['acao'] == 'excluir'){
+		if($utensilios->excluirUtensilios($_GET['id'])){
+			echo "<script>alert('Dado excluído com sucesso!');</script>";
+			header('Location: listutensilios.php');
+			
+		} else {
+			echo "<script>alert('Erro na exclusão!');</script>";
+			header('Location: listutensilios.php');
+		}
+	}
 }
 
 ?>

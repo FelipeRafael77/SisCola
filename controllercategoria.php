@@ -17,19 +17,19 @@ if(!empty($_POST['nomeCategoria'])){
 	include 'cadcategoria.php';
 	
 
-//}else{
-//	if(@$_GET['acao'] == 'excluir'){
-//		if($usuario->deletaUsuario($_GET['id_usuario'])){
-//			echo "<script>alert('Dado excluído com sucesso!');</script>";
-//			header('Location: controllercategoria.php');
+}else{
+	if(@$_GET['acao'] == 'excluir'){
+		if($categoria->excluirCategoria($_GET['id'])){
+			echo "<script>alert('Dado excluído com sucesso!');</script>";
+			header('Location: listcategoria.php');
 			
-//		} else {
-//			echo "<script>alert('Erro na exclusão!');</script>";
-//			header('Location: controllercategoria.php');
-//		}
+		} else {
+			echo "<script>alert('Erro na exclusão!');</script>";
+			header('Location: listcategoria.php');
+		}
          
 
-	//}
+	}
 }
 
 ?>

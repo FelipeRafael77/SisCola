@@ -59,4 +59,13 @@ class Devolucao{
         }
 
     }
+
+    public function excluirDevolucao($id){
+        $sql = $this->conexao->getStmt("DELETE FROM devolucao WHERE idDevolucao= ".$id);
+        if($sql->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
