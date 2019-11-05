@@ -27,6 +27,7 @@
 							<a class="dropdown-item" href="cadcategoria.php">Categoria</a>
 							<a class="dropdown-item" href="cadtipo.php">Tipo</a>
 							<a class="dropdown-item" href="cadutensilio.php">Utensílios Escolares</a>
+							<a class="dropdown-item" href="cadhistoricocaixa.php">Histórico do Caixa</a>
 						</div>
 					</li>
 					<li class="nav-item dropdown">
@@ -36,7 +37,6 @@
 							<a class="dropdown-item" href="cadcaixa.php">Caixa</a>
 							<a class="dropdown-item" href="cadmulta.php">Multa</a>
 							<a class="dropdown-item" href="caddevolucao.php">Devolução</a>
-							<a class="dropdown-item" href="cadhistoricocaixa.php">Histórico do Caixa</a>
 						</div>
 					</li>
 					<li class="nav-item active">
