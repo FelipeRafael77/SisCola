@@ -13,7 +13,7 @@ $pessoa = new Pessoa();
 
 if(!empty($_POST['nome'])){
 
-    $pessoa->setNome($_POST['nome']);
+	$pessoa->setNome($_POST['nome']);
 	$pessoa->setRg($_POST['rg']);
 	$pessoa->setCpf($_POST['cpf']);
 	$pessoa->setEndereco($_POST['endereco']);
@@ -23,8 +23,8 @@ if(!empty($_POST['nome'])){
 	$pessoa->setStatus($_POST['status']);
 	$pessoa->setLogin($_POST['select_login']);
 	$pessoa->setTipo($_POST['select_tipo']);
-    $pessoa->incluirPessoa();
-    header('Location: cadpessoa.php');
+	$pessoa->incluirPessoa();
+	header('Location: cadpessoa.php');
 
 }else{
 	if(@$_GET['acao'] == 'excluir'){
@@ -35,7 +35,16 @@ if(!empty($_POST['nome'])){
 		} else {
 			echo "<script>alert('Erro na exclusão!');</script>";
 			header('Location: listpessoas.php');
+		}
 	}
 }
-}
+
+if(@$_GET['acao'] == 'alterar'){
+	if($pessoa->alterarPessoa($_GET['id'])){
+          echo "<script>alert('Dado alterado com sucesso!');</script>";
+		}
+	} else {
+		echo "<script>alert('Erro na alteração!');</script>";
+		header('Location: listpessoas.php');
+	}
 ?>

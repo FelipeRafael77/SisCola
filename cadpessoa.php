@@ -4,6 +4,10 @@
 	<meta charset="utf-8">
 	<title>SisCola</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mask.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="js/model.js"></script>
 </head>
 
 <body>
@@ -20,10 +24,10 @@
         		Nome: <input class="form-control mr-sm-2" type="text" name="nome">
         	</div>
         	<div class="form-group col-md-2">
-        		RG: <input class="form-control mr-sm-2" type="number" name="rg">
+        		RG: <input class="form-control mr-sm-2" type="text" name="rg">
         	</div>
         	<div class="form-group col-md-2">
-        		CPF: <input class="form-control mr-sm-2" type="number" name="cpf">
+        		CPF: <input class="form-control mr-sm-2" type="text" id="cpf" name="cpf">
         	</div>
         	<div class="form-group col-md-3">
         		Endereço: <input class="form-control mr-sm-2" type="text" name="endereco">
@@ -31,7 +35,7 @@
         </div>
         <div class="form-row">
         	<div class="form-group col-md-3 ml-3">
-        		Telefone: <input class="form-control mr-sm-2" type="number" name="telefone">
+        		Telefone: <input class="form-control mr-sm-2" type="text" name="telefone">
         	</div>
         	<div class="form-group col-md-3">
         		Registro de Professor: <input class="form-control mr-sm-2" type="number" name="regprof">
@@ -48,7 +52,7 @@
             <?php
             require_once('conexao.php');
             $conexao = new PDO( 'mysql:host=localhost;dbname=sisestagio' , 'root' , '' );
-            $stmt = $conexao-> prepare( 'SELECT idLogin, login FROM login' );
+            $stmt = $conexao-> prepare('SELECT idLogin, login FROM login');
             $stmt-> execute();
             $resultado = $stmt-> fetchAll( PDO::FETCH_ASSOC );
             ?>
