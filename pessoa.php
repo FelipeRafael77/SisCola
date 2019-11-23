@@ -175,22 +175,4 @@ class Pessoa{
             return false;
         }
     }
-
-    public function alterarPessoa($id){
-        $id = $_REQUEST['id'];
-        $nome = $_REQUEST["nome"];
-        $rg = $_REQUEST["rg"];
-        $cpf = $_REQUEST["sexo"];
-        $endereco = $_REQUEST["endereco"];
-        $telefone = $_REQUEST["telefone"];
-        $regprof = $_REQUEST["regprof"];
-        $mataluno = $_REQUEST["mataluno"];
-        $status = $_REQUEST["status"];
-        $login = $_REQUEST["login"];
-        $tipo = $_REQUEST["tipo"];
-        $result = $this->conexao->getStmt("UPDATE pessoa SET nomePessoa='$nome', rgPessoa='$rg', cpfPessoa='$cpf', enderecoPessoa='$endereco', telefonePessoa='$telefone', registroProfessor='$regprof', matriculaAluno='$mataluno', status='$status', idLogin='login', idTipo='$tipo' WHERE idPessoa='$id'");
-        echo "Registro id $id atualizado com sucesso";
- 
-    }
-
 }
