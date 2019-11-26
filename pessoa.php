@@ -175,4 +175,9 @@ class Pessoa{
             return false;
         }
     }
+
+    public function alterarPessoa($id){
+         $sql = $this->conexao->getStmt("UPDATE pessoa SET nomePessoa='pessoa->getNome();', rgPessoa='pessoa->getRg();', cpfPessoa='pessoa->getCpf();', enderecoPessoa='pessoa->getEndereco();', telefonePessoa='pessoa->getTelefone();', registroProfessor='pessoa->getRegProf();', matriculaAluno='pessoa->getMatAluno();', status='pessoa->getStatus();', idLogin='pessoa->getLogin();', idTipo='pessoa->getTipo();' WHERE idPessoa='$id'");
+
+    }
 }
