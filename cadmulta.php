@@ -4,11 +4,13 @@
 	<meta charset="utf-8">
 	<title>SisCola</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="js/validator.min.js"></script>
 </head>
 
 <body>
 
-	<form class="text-center" action="controllermulta.php" method="POST">
+	<form class="text-center" data-toggle="validator" action="controllermulta.php" method="POST">
        
        <div class="text-center"> 
         <br><h1>Multa</h1>
@@ -17,10 +19,12 @@
         
         <div class="form-row">
         	<div class="form-group col-md-2 offset-md-3">
-        		Data: <input class="form-control mr-sm-2" type="date" name="data">
+        		Data: <input class="form-control mr-sm-2" type="date" name="data" required>
+                <div class="help-block with-errors"></div>
         	</div>
         	<div class="form-group col-md-2">
-        		Valor: <input class="form-control mr-sm-2" type="text" name="valor">
+        		Valor: <input class="form-control mr-sm-2" type="text" name="valor" required>
+                <div class="help-block with-errors"></div>
         	</div>
         	<div class="form-group col-md-2">
         		<?php

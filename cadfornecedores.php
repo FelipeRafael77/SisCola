@@ -4,11 +4,13 @@
 	<meta charset="utf-8">
 	<title>SisCola</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="js/validator.min.js"></script>
 </head>
 
 <body>
 
-	<form class="text-center" action="controllerfornecedores.php" method="POST">
+	<form class="text-center" data-toggle="validator" action="controllerfornecedores.php" method="POST">
 
 		<div class="text-center"> 
         <br><h1>Cadastro de Fornecedores</h1>
@@ -17,16 +19,19 @@
         
         <div class="form-row">
         	<div class="form-group col-md-2 offset-md-2">
-        		Nome: <input class="form-control mr-sm-2" type="text" name="nomeFornecedor">
+        		Nome: <input class="form-control mr-sm-2" type="text" name="nomeFornecedor" required>
+                <div class="help-block with-errors"></div>
         	</div>
         	<div class="form-group col-md-2">
         		CNPJ: <input class="form-control mr-sm-2" type="text" name="cnpjFornecedor">
         	</div>
         	<div class="form-group col-md-2">
-        		Endereço: <input class="form-control mr-sm-2" type="text" name="enderecoFornecedor">
+        		Endereço: <input class="form-control mr-sm-2" type="text" name="enderecoFornecedor" required>
+                <div class="help-block with-errors"></div>
         	</div>
         	<div class="form-group col-md-2">
-        		Telefone: <input class="form-control mr-sm-2" type="text" name="telefoneFornecedor">
+        		Telefone: <input class="form-control mr-sm-2" type="text" name="telefoneFornecedor" required>
+                <div class="help-block with-errors"></div>
         	</div>
         </div>
 		<div class="text-center">

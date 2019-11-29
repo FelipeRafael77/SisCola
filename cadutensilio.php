@@ -4,11 +4,13 @@
 	<meta charset="utf-8">
 	<title>SisCola</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="js/validator.min.js"></script>
 </head>
 
 <body>
 
-	<form class="text-center" action="controllerutensilios.php" method="POST">
+	<form class="text-center" data-toggle="validator" action="controllerutensilios.php" method="POST">
 
 		<div class="text-center"> 
         <br><h1>Cadastro de Utensílios Escolares</h1>
@@ -17,13 +19,16 @@
         
         <div class="form-row">
         	<div class="form-group col-md-2 offset-md-1">
-        		Nome: <input class="form-control mr-sm-2" type="text" name="nome">
+        		Nome: <input class="form-control mr-sm-2" type="text" name="nome" required>
+                <div class="help-block with-errors"></div>
         	</div>
         	<div class="form-group col-md-3">
-        		Especificação: <input class="form-control mr-sm-2" type="text" name="especificacao">
+        		Especificação: <input class="form-control mr-sm-2" type="text" name="especificacao" required>
+                <div class="help-block with-errors"></div>
         	</div>
         	<div class="form-group col-md-1">
-        		Quantidade: <input class="form-control mr-sm-2" type="number" name="quantidade">
+        		Quantidade: <input class="form-control mr-sm-2" type="number" name="quantidade" required>
+                <div class="help-block with-errors"></div>
         	</div>
             <div class="form-group col-md-2">
                 <?php

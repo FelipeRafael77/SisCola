@@ -4,11 +4,13 @@
 	<meta charset="utf-8">
 	<title>SisCola</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="js/validator.min.js"></script>
 </head>
 
 <body>
 
-	<form class="text-center" action="controllercaixa.php" method="POST">
+	<form class="text-center" data-toggle="validator" action="controllercaixa.php" method="POST">
        
        <div class="text-center"> 
         <br><h1>Cadastro de Caixa</h1>
@@ -17,16 +19,20 @@
         
         <div class="form-row">
         	<div class="form-group col-md-2">
-        		Data de Abertura: <input class="form-control mr-sm-2" type="date" name="dataAbertura">
+        		Data de Abertura: <input class="form-control mr-sm-2" type="date" name="dataAbertura" required>
+                <div class="help-block with-errors"></div>
         	</div>
         	<div class="form-group col-md-2">
-        		Saldo: <input class="form-control mr-sm-2" type="text" name="saldo">
+        		Saldo: <input class="form-control mr-sm-2" type="text" name="saldo" required>
+                <div class="help-block with-errors"></div>
         	</div>
         	<div class="form-group col-md-2">
-        		Entrada: <input class="form-control mr-sm-2" type="text" name="entrada">
+        		Entrada: <input class="form-control mr-sm-2" type="text" name="entrada" required>
+                <div class="help-block with-errors"></div>
         	</div>
         	<div class="form-group col-md-2">
-        		Saída: <input class="form-control mr-sm-2" type="text" name="saida">
+        		Saída: <input class="form-control mr-sm-2" type="text" name="saida" required>
+                <div class="help-block with-errors"></div>
         	</div>
             <div class="form-group col-md-2">
                 <?php

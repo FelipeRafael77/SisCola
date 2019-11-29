@@ -4,11 +4,13 @@
 	<meta charset="utf-8">
 	<title>SisCola</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="js/validator.min.js"></script>
 </head>
 
 <body>
 
-	<form class="text-center" action="controlleremprestimo.php" method="POST">
+	<form class="text-center" data-toggle="validator" action="controlleremprestimo.php" method="POST">
         
         <div class="text-center"> 
         <br><h1>Cadastro de Empréstimo</h1>
@@ -17,13 +19,16 @@
 
        <div class="form-row">
         	<div class="form-group col-md-2 offset-md-2">
-        		Tipo de Empréstimo: <input class="form-control mr-sm-2" type="text" name="tipoEmprestimo">
+        		Tipo de Empréstimo: <input class="form-control mr-sm-2" type="text" name="tipoEmprestimo" required>
+                <div class="help-block with-errors"></div>
         	</div>
         	<div class="form-group col-md-2">
-        		Data do Empréstimo: <input class="form-control mr-sm-2" type="date" name="dataEmprestimo">
+        		Data do Empréstimo: <input class="form-control mr-sm-2" type="date" name="dataEmprestimo" required>
+                <div class="help-block with-errors"></div>
         	</div>
         	<div class="form-group col-md-2">
-        		Prazo: <input class="form-control mr-sm-2" type="date" name="prazo">
+        		Prazo: <input class="form-control mr-sm-2" type="date" name="prazo" required>
+                <div class="help-block with-errors"></div>
         	</div>
         	<div class="form-group col-md-2">
         		<?php

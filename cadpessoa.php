@@ -5,14 +5,13 @@
 	<title>SisCola</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script type="text/javascript" src="js/jquery.mask.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="js/validator.min.js"></script>
     <script src="js/model.js"></script>
 </head>
 
 <body>
 
-	<form class="text-center" action="controllerpessoa.php" method="POST">
+	<form class="text-center" data-toggle="validator" action="controllerpessoa.php" method="POST">
        
        <div class="text-center"> 
         <br><h1>Cadastro de Pessoa</h1>
@@ -21,16 +20,19 @@
         
         <div class="form-row">
         	<div class="form-group col-md-4 ml-3">
-        		Nome: <input class="form-control mr-sm-2" type="text" name="nome">
+        		Nome: <input class="form-control mr-sm-2" type="text" name="nome" required>
+                <div class="help-block with-errors"></div>
         	</div>
         	<div class="form-group col-md-2">
         		RG: <input class="form-control mr-sm-2" type="text" name="rg">
         	</div>
         	<div class="form-group col-md-2">
-        		CPF: <input class="form-control mr-sm-2" type="text" id="cpf" name="cpf">
+        		CPF: <input class="form-control mr-sm-2" type="text" name="cpf">
+                
         	</div>
         	<div class="form-group col-md-3">
-        		Endereço: <input class="form-control mr-sm-2" type="text" name="endereco">
+        		Endereço: <input class="form-control mr-sm-2" type="text" name="endereco" required>
+                <div class="help-block with-errors"></div>
         	</div>
         </div>
         <div class="form-row">
