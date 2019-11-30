@@ -7,6 +7,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="js/validator.min.js"></script>
     <script src="js/model.js"></script>
+    <script src="js/jquery.mask.min.js"></script>
 </head>
 
 <body>
@@ -27,8 +28,8 @@
         		RG: <input class="form-control mr-sm-2" type="text" name="rg">
         	</div>
         	<div class="form-group col-md-2">
-        		CPF: <input class="form-control mr-sm-2" type="text" name="cpf">
-                
+        		CPF: <input class="form-control mr-sm-2" type="text" name="cpf" id="cpf" required>
+                <div class="help-block with-errors"></div>
         	</div>
         	<div class="form-group col-md-3">
         		Endereço: <input class="form-control mr-sm-2" type="text" name="endereco" required>
@@ -37,7 +38,7 @@
         </div>
         <div class="form-row">
         	<div class="form-group col-md-3 ml-3">
-        		Telefone: <input class="form-control mr-sm-2" type="text" name="telefone">
+        		Telefone: <input class="form-control mr-sm-2" type="text" name="telefone" id="telefone">
         	</div>
         	<div class="form-group col-md-3">
         		Registro de Professor: <input class="form-control mr-sm-2" type="number" name="regprof">
@@ -58,7 +59,7 @@
             $stmt-> execute();
             $resultado = $stmt-> fetchAll( PDO::FETCH_ASSOC );
             ?>
-            Login: <select class="form-control mr-sm-2" name="select_login">
+            Login: <select class="form-control mr-sm-2" name="login">
                 <option>Selecione...</option>
                 <?php foreach( $resultado as $row ) { ?>  
                 <option value="<?php echo $row['idLogin'];?>"><?php echo $row['login'];?></option>
@@ -74,7 +75,7 @@
             $stmt-> execute();
             $resultado = $stmt-> fetchAll( PDO::FETCH_ASSOC );
             ?>
-            Tipo: <select class="form-control mr-sm-2" name="select_tipo">
+            Tipo: <select class="form-control mr-sm-2" name="tipo">
                 <option>Selecione...</option>
                 <?php foreach( $resultado as $row ) { ?>  
                 <option value="<?php echo $row['idTipo'];?>"><?php echo $row['descricao'];?></option>

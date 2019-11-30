@@ -175,9 +175,12 @@ class Pessoa{
             return false;
         }
     }
-
-    public function alterarPessoa($id){
-         $sql = $this->conexao->getStmt("UPDATE pessoa SET nomePessoa='pessoa->getNome();', rgPessoa='pessoa->getRg();', cpfPessoa='pessoa->getCpf();', enderecoPessoa='pessoa->getEndereco();', telefonePessoa='pessoa->getTelefone();', registroProfessor='pessoa->getRegProf();', matriculaAluno='pessoa->getMatAluno();', status='pessoa->getStatus();', idLogin='pessoa->getLogin();', idTipo='pessoa->getTipo();' WHERE idPessoa=".$id);
-
-    }
+public function alterarPessoa($id){
+    $sql = $this->conexao->getStmt("UPDATE pessoa SET nomePessoa='".$_POST['nome']."', rgPessoa='".$_POST['rg']."', cpfPessoa='".$_POST['cpf']."', enderecoPessoa='".$_POST['endereco']."', telefonePessoa='".$_POST['telefone']."', registroProfessor='".$_POST['regprof']."', matriculaAluno='".$_POST['mataluno']."', status='".$_POST['status']."', idLogin='".$_POST['login']."', idTipo='".$_POST['tipo']."' WHERE idPessoa=".$id);
+    if($sql->execute()){
+            return true;
+        }else{
+            return false;
+        }
 }
+} 

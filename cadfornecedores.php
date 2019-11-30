@@ -6,6 +6,8 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="js/validator.min.js"></script>
+    <script src="js/model.js"></script>
+    <script src="js/jquery.mask.min.js"></script>
 </head>
 
 <body>
@@ -23,14 +25,14 @@
                 <div class="help-block with-errors"></div>
         	</div>
         	<div class="form-group col-md-2">
-        		CNPJ: <input class="form-control mr-sm-2" type="text" name="cnpjFornecedor">
+        		CNPJ: <input class="form-control mr-sm-2" type="text" name="cnpjFornecedor" id="cnpj">
         	</div>
         	<div class="form-group col-md-2">
         		Endereço: <input class="form-control mr-sm-2" type="text" name="enderecoFornecedor" required>
                 <div class="help-block with-errors"></div>
         	</div>
         	<div class="form-group col-md-2">
-        		Telefone: <input class="form-control mr-sm-2" type="text" name="telefoneFornecedor" required>
+        		Telefone: <input class="form-control mr-sm-2" type="text" name="telefoneFornecedor" id="telefone" required>
                 <div class="help-block with-errors"></div>
         	</div>
         </div>

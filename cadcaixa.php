@@ -6,6 +6,8 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="js/validator.min.js"></script>
+    <script src="js/model.js"></script>
+    <script src="js/jquery.mask.min.js"></script>
 </head>
 
 <body>
@@ -23,15 +25,15 @@
                 <div class="help-block with-errors"></div>
         	</div>
         	<div class="form-group col-md-2">
-        		Saldo: <input class="form-control mr-sm-2" type="text" name="saldo" required>
+        		Saldo: <input class="form-control mr-sm-2" type="text" name="saldo" id="dinheiro" required>
                 <div class="help-block with-errors"></div>
         	</div>
         	<div class="form-group col-md-2">
-        		Entrada: <input class="form-control mr-sm-2" type="text" name="entrada" required>
+        		Entrada: <input class="form-control mr-sm-2" type="text" name="entrada" id="dinheiro2" required>
                 <div class="help-block with-errors"></div>
         	</div>
         	<div class="form-group col-md-2">
-        		Saída: <input class="form-control mr-sm-2" type="text" name="saida" required>
+        		Saída: <input class="form-control mr-sm-2" type="text" name="saida" id="dinheiro3" required>
                 <div class="help-block with-errors"></div>
         	</div>
             <div class="form-group col-md-2">

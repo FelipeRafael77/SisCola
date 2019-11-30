@@ -22,3 +22,32 @@ function cliqueDuplo(){
 					});
 				});
 }
+
+$(document).ready(function(){
+    $('#cpf').mask('000.000.000-00');
+});
+
+$(document).ready(function(){
+    $('#cnpj').mask('00.000.000/0000-00');
+});
+
+$(document).ready(function(){
+    $('#telefone').mask('(00) 00000-0000');
+});
+
+$(document).ready(function(){
+    $('#dinheiro').mask('#.###,##');
+});
+
+$(document).ready(function(){
+    $('#dinheiro2').mask('#.###,##');
+});
+
+$(document).ready(function(){
+    $('#dinheiro3').mask('#.###,##');
+});
+
+$(document).ready(function(){
+    $('#dinheiro4').mask('#.###,##');
+});
+
