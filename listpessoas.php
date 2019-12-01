@@ -27,7 +27,6 @@
                     <th>Login</th>
                     <th>Tipo</th>
                     <th>Excluir</th>
-                    <th>Alterar</th>
                 </thead>
                 <?php
 
@@ -37,7 +36,7 @@
                 $listPessoas=$pessoa->listarPessoa();
 
                 foreach ($listPessoas as $key) {
-                    echo "<tr ondblclick='cliqueDuplo()'><td>".$key['idPessoa']."</td><td>".$key['nomePessoa']."</td><td>".$key['rgPessoa']."</td><td>".$key['cpfPessoa']."</td><td>".$key['enderecoPessoa']."</td><td>".$key['telefonePessoa']."</td><td>".$key['registroProfessor']."</td><td>".$key['matriculaAluno']."</td><td>".$key['status']."</td><td>".$key['idLogin']."</td><td>".$key['idTipo']."</td><td><a class='glyphicon glyphicon-trash' href='controllerpessoa.php?acao=excluir&id=".$key['idPessoa']."'></a></td><td><a class='glyphicon glyphicon-pencil' href='controllerpessoa.php?acao=alterar&id=".$key['idPessoa']."'></a></td></td></tr>";
+                    echo "<tr><td>".$key['idPessoa']."</td><td>".$key['nomePessoa']."</td><td>".$key['rgPessoa']."</td><td>".$key['cpfPessoa']."</td><td>".$key['enderecoPessoa']."</td><td>".$key['telefonePessoa']."</td><td>".$key['registroProfessor']."</td><td>".$key['matriculaAluno']."</td><td>".$key['status']."</td><td>".$key['idLogin']."</td><td>".$key['idTipo']."</td><td><a class='glyphicon glyphicon-trash' href='controllerpessoa.php?acao=excluir&id=".$key['idPessoa']."'></a></td></td></tr>";
                 }
                 ?>
             </table>

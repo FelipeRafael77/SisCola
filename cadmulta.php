@@ -25,7 +25,7 @@
                 <div class="help-block with-errors"></div>
         	</div>
         	<div class="form-group col-md-2">
-        		Valor: <input class="form-control mr-sm-2" type="text" name="valor" id="dinheiro4" required>
+        		Valor: <input class="form-control mr-sm-2" type="text" name="valor" id="dinheiro4" maxlength="8" required>
                 <div class="help-block with-errors"></div>
         	</div>
         	<div class="form-group col-md-2">

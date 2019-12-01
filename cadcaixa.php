@@ -25,15 +25,15 @@
                 <div class="help-block with-errors"></div>
         	</div>
         	<div class="form-group col-md-2">
-        		Saldo: <input class="form-control mr-sm-2" type="text" name="saldo" id="dinheiro" required>
+        		Saldo: <input class="form-control mr-sm-2" type="text" name="saldo" id="dinheiro" maxlength="8" required>
                 <div class="help-block with-errors"></div>
         	</div>
         	<div class="form-group col-md-2">
-        		Entrada: <input class="form-control mr-sm-2" type="text" name="entrada" id="dinheiro2" required>
+        		Entrada: <input class="form-control mr-sm-2" type="text" name="entrada" id="dinheiro2" maxlength="8" required>
                 <div class="help-block with-errors"></div>
         	</div>
         	<div class="form-group col-md-2">
-        		Saída: <input class="form-control mr-sm-2" type="text" name="saida" id="dinheiro3" required>
+        		Saída: <input class="form-control mr-sm-2" type="text" name="saida" id="dinheiro3" maxlength="8" required>
                 <div class="help-block with-errors"></div>
         	</div>
             <div class="form-group col-md-2">

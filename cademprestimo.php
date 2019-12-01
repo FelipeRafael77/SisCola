@@ -19,7 +19,7 @@
 
        <div class="form-row">
         	<div class="form-group col-md-2 offset-md-2">
-        		Tipo de Empréstimo: <input class="form-control mr-sm-2" type="text" name="tipoEmprestimo" required>
+        		Tipo de Empréstimo: <input class="form-control mr-sm-2" pattern="[a-zA-Zà-úÀ-Ú]+" type="text" name="tipoEmprestimo" maxlength="50" required>
                 <div class="help-block with-errors"></div>
         	</div>
         	<div class="form-group col-md-2">

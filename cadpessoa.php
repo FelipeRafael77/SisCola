@@ -21,24 +21,26 @@
         
         <div class="form-row">
         	<div class="form-group col-md-4 ml-3">
-        		Nome: <input class="form-control mr-sm-2" type="text" name="nome" required>
+        		Nome: <input class="form-control mr-sm-2" pattern="[a-zA-Zà-úÀ-Ú]+" type="text" name="nome" maxlength="100"required>
                 <div class="help-block with-errors"></div>
         	</div>
         	<div class="form-group col-md-2">
-        		RG: <input class="form-control mr-sm-2" type="text" name="rg">
+        		RG: <input class="form-control mr-sm-2" pattern="[0-9]+" type="text" name="rg" maxlength="9" required>
+                <div class="help-block with-errors"></div>
         	</div>
         	<div class="form-group col-md-2">
         		CPF: <input class="form-control mr-sm-2" type="text" name="cpf" id="cpf" required>
                 <div class="help-block with-errors"></div>
         	</div>
         	<div class="form-group col-md-3">
-        		Endereço: <input class="form-control mr-sm-2" type="text" name="endereco" required>
+        		Endereço: <input class="form-control mr-sm-2" pattern="[a-zA-Zà-úÀ-Ú]+" type="text" name="endereco" maxlength="50" required>
                 <div class="help-block with-errors"></div>
         	</div>
         </div>
         <div class="form-row">
         	<div class="form-group col-md-3 ml-3">
-        		Telefone: <input class="form-control mr-sm-2" type="text" name="telefone" id="telefone">
+        		Telefone: <input class="form-control mr-sm-2" type="text" name="telefone" id="telefone" required>
+                <div class="help-block with-errors"></div>
         	</div>
         	<div class="form-group col-md-3">
         		Registro de Professor: <input class="form-control mr-sm-2" type="number" name="regprof">
@@ -47,7 +49,7 @@
         		Matrícula do Aluno: <input class="form-control mr-sm-2" type="number" name="mataluno">
         	</div>
         	<div class="form-check">
-        		Status: <input class="form-control mr-sm-2" type="text" name="status">
+        		Status: <input class="form-control mr-sm-2" pattern="[a-zA-Z]+" type="text" name="status" maxlength="7">
         	</div>
         </div>
         <div class="form-row">

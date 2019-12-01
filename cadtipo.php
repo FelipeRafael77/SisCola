@@ -19,7 +19,7 @@
         
         <div class="form-row">
         	<div class="form-group col-md-4 offset-md-4">
-        		Descrição: <input class="form-control mr-sm-2" type="text" name="descricao" required>
+        		Descrição: <input class="form-control mr-sm-2" pattern="[a-zA-Zà-úÀ-Ú]+" type="text" name="descricao" maxlength="100" required>
                 <div class="help-block with-errors"></div>
         	</div>
         </div>

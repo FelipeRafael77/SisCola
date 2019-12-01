@@ -21,8 +21,8 @@ if(!empty($_POST['nome'])){
 	$pessoa->setRegProf($_POST['regprof']);
 	$pessoa->setMatAluno($_POST['mataluno']);
 	$pessoa->setStatus($_POST['status']);
-	$pessoa->setLogin($_POST['select_login']);
-	$pessoa->setTipo($_POST['select_tipo']);
+	$pessoa->setLogin($_POST['login']);
+	$pessoa->setTipo($_POST['tipo']);
 	$pessoa->incluirPessoa();
 	header('Location: cadpessoa.php');
 
@@ -39,17 +39,17 @@ if(!empty($_POST['nome'])){
 	}
 }
 
-if(@$_GET['acao'] == 'alterar'){
-     if($pessoa->alterarPessoa($_GET['id'])){
-			echo "<script>alert('Dado alterado com sucesso!');</script>";
-			header('Location: listpessoas.php');
-			
-		} else {
-			echo "<script>alert('Erro na alteração!');</script>";
-			header('Location: listpessoas.php');
-		}
+//if(@$_GET['acao'] == 'alterar'){
+//     if($pessoa->alterarPessoa($_GET['id'])){
+//			echo "<script>alert('Dado alterado com sucesso!');</script>";
+//			header('Location: listpessoas.php');
+//			
+//		} else {
+//			echo "<script>alert('Erro na alteração!');</script>";
+//			header('Location: listpessoas.php');
+//		}
        
  
-    }
+//    }
 
 ?>

@@ -19,15 +19,15 @@
         
         <div class="form-row">
         	<div class="form-group col-md-2 offset-md-1">
-        		Nome: <input class="form-control mr-sm-2" type="text" name="nome" required>
+        		Nome: <input class="form-control mr-sm-2" type="text" pattern="[a-zA-Z]+" name="nome" maxlength="50"required>
                 <div class="help-block with-errors"></div>
         	</div>
         	<div class="form-group col-md-3">
-        		Especificação: <input class="form-control mr-sm-2" type="text" name="especificacao" required>
+        		Especificação: <input class="form-control mr-sm-2" pattern="[a-zA-Z]+" type="text" name="especificacao" maxlength="100" required>
                 <div class="help-block with-errors"></div>
         	</div>
         	<div class="form-group col-md-1">
-        		Quantidade: <input class="form-control mr-sm-2" type="number" name="quantidade" required>
+        		Quantidade: <input class="form-control mr-sm-2" min='1' type="number" name="quantidade" required>
                 <div class="help-block with-errors"></div>
         	</div>
             <div class="form-group col-md-2">

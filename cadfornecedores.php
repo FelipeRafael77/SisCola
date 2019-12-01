@@ -21,14 +21,15 @@
         
         <div class="form-row">
         	<div class="form-group col-md-2 offset-md-2">
-        		Nome: <input class="form-control mr-sm-2" type="text" name="nomeFornecedor" required>
+        		Nome: <input class="form-control mr-sm-2" pattern="[a-zA-Zà-úÀ-Ú]+" type="text" name="nomeFornecedor" maxlength="100" required>
                 <div class="help-block with-errors"></div>
         	</div>
         	<div class="form-group col-md-2">
-        		CNPJ: <input class="form-control mr-sm-2" type="text" name="cnpjFornecedor" id="cnpj">
+        		CNPJ: <input class="form-control mr-sm-2" type="text" name="cnpjFornecedor" id="cnpj" required>
+                <div class="help-block with-errors"></div>
         	</div>
         	<div class="form-group col-md-2">
-        		Endereço: <input class="form-control mr-sm-2" type="text" name="enderecoFornecedor" required>
+        		Endereço: <input class="form-control mr-sm-2" pattern="[a-zA-Zà-úÀ-Ú]+" type="text" name="enderecoFornecedor" maxlength="50" required>
                 <div class="help-block with-errors"></div>
         	</div>
         	<div class="form-group col-md-2">
